@@ -1,0 +1,38 @@
+.scroll-wrapper {
+  overflow: hidden;
+  height: 2em;
+  min-width: 420px;
+  display: inline-block;
+  vertical-align: bottom;
+  position: relative;
+}
+
+.scroll-track {
+  display: flex;
+  flex-direction: column;
+  animation: scroll-up linear infinite;
+  animation-duration: calc(2.4s * 6);
+  /* 2.0s per word * number of words */
+}
+
+.scroll-item {
+  display: block;
+  height: 1.5em;
+  line-height: 1.5em;
+  font-size: 1.5em;
+  color: var(--text);
+  font-family: "Lato", sans-serif;
+  font-weight: 390;
+  white-space: nowrap;
+}
+
+@keyframes scroll-up {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-50%);
+    /* moves exactly one full set of words */
+  }
+}

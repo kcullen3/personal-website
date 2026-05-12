@@ -14,16 +14,23 @@ function Footer() {
     <Container fluid className="footer">
       <Row>
         <Col md="4" className="footer-copywright">
-          <h3>Designed and Developed by Soumyajit Behera</h3>
+          <h3>Built by Keigan Cullen</h3>
+         <p style={{ fontSize: "0.75em", opacity: 0.7 }}>
+            Original design by{" "}
+            <a href="https://github.com/soumyajit4419/Portfolio" 
+            target="_blank" rel="noopener noreferrer">
+            Soumyajit Behera
+            </a>
+         </p>
         </Col>
-        <Col md="4" className="footer-copywright">
-          <h3>Copyright © {year} SB</h3>
-        </Col>
+<Col md="4" className="footer-copywright">
+  <h3>© {year} Keigan Cullen</h3>
+</Col>
         <Col md="4" className="footer-body">
           <ul className="footer-icons">
             <li className="social-icons">
               <a
-                href="https://github.com/soumyajit4419"
+                href="https://github.com/kcullen3"
                 style={{ color: "white" }}
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -33,7 +40,7 @@ function Footer() {
             </li>
             <li className="social-icons">
               <a
-                href="https://twitter.com/Soumyajit4419"
+                href="https://x.com/KeiganCullen"
                 style={{ color: "white" }}
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -43,7 +50,7 @@ function Footer() {
             </li>
             <li className="social-icons">
               <a
-                href="https://www.linkedin.com/in/soumyajit4419/"
+                href="https://www.linkedin.com/in/keigan-cullen-000551171/"
                 style={{ color: "white" }}
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -53,7 +60,7 @@ function Footer() {
             </li>
             <li className="social-icons">
               <a
-                href="https://www.instagram.com/soumyajit4419"
+                href="https://www.instagram.com/keigancullen"
                 style={{ color: "white" }}
                 target="_blank" 
                 rel="noopener noreferrer"

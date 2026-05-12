@@ -1,76 +1,66 @@
-<h2 align="center">
-  Portfolio Website - v2.0<br/>
-  <a href="https://soumyajit.vercel.app/" target="_blank">soumyajit.tech</a>
-</h2>
-<div align="center">
-  <img alt="Demo" src="./Images/readme-img1.png" />
-</div>
+# Keigan Cullen — Personal Portfolio
 
-<br/>
+Personal portfolio site for Keigan Cullen: computational physicist, robotics engineer, energy healer, and entrepreneur.
 
-<center>
+**Live site:** https://kcullen3.github.io/personal-website
 
-[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com) &nbsp;
-[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com) &nbsp;
-[![forthebadge](https://forthebadge.com/images/badges/open-source.svg)](https://forthebadge.com) &nbsp;
-![GitHub Repo stars](https://img.shields.io/github/stars/soumyajit4419/Portfolio?color=red&logo=github&style=for-the-badge) &nbsp;
-![GitHub forks](https://img.shields.io/github/forks/soumyajit4419/Portfolio?color=red&logo=github&style=for-the-badge)
+---
 
-</center>
+## Tech Stack
 
-<h3 align="center">
-    🔹
-    <a href="https://github.com/soumyajit4419/Portfolio/issues">Report Bug</a> &nbsp; &nbsp;
-    🔹
-    <a href="https://github.com/soumyajit4419/Portfolio/issues">Request Feature</a>
-</h3>
+- React 17 (Create React App)
+- React Router v6
+- React Bootstrap + Bootstrap 5
+- EmailJS (contact form)
+- react-pdf (PDF viewer)
+- react-tsparticles (particle background)
+- Deployed via gh-pages
 
-## TL;DR
+---
 
-You can fork this repo to modify and make changes of your own. Please give me proper credit by linking back to [Soumyajit4419](https://github.com/soumyajit4419/Portfolio). Thanks!
+## Local Setup
 
-## Built With
+```bash
+# 1. Clone the repo
+git clone https://github.com/kcullen3/personal-website.git
+cd personal-website
 
-My personal portfolio <a href="https://soumyajit.vercel.app/" target="_blank">soumyajit.tech</a> which features some of my github projects as well as my resume and technical skills.<br/>
+# 2. Install dependencies
+npm install
 
-This project was built using these technologies.
+# 3. Set up environment variables
+cp .env.example .env
+# Fill in your EmailJS credentials in .env
 
-- React.js
-- Node.js
-- Express.js
-- CSS3
-- VsCode
-- Vercel
+# 4. Start the dev server
+npm start
+# Opens at http://localhost:3000
+```
 
-## Features
+---
 
-**📖 Multi-Page Layout**
+## Deployment to GitHub Pages
 
-**🎨 Styled with React-Bootstrap and Css with easy to customize colors**
+```bash
+npm run deploy
+```
 
-**📱 Fully Responsive**
+This runs `npm run build` then pushes the `/build` folder to the `gh-pages` branch via the `gh-pages` package. The live site updates automatically.
 
-## Getting Started
+> **Note:** Your `.env` file must be present locally when running `npm run deploy` — the EmailJS environment variables get baked into the build at that time.
 
-Clone down this repository. You will need `node.js` and `git` installed globally on your machine.
+---
 
-## 🛠 Installation and Setup Instructions
+## Environment Variables
 
-1. Installation: `npm install`
+Copy `.env.example` to `.env` and fill in your values:
 
-2. In the project directory, you can run: `npm start`
+| Variable | Description |
+|----------|-------------|
+| `REACT_APP_EMAILJS_SERVICE_ID` | Your EmailJS service ID |
+| `REACT_APP_EMAILJS_TEMPLATE_ID` | Your EmailJS template ID |
+| `REACT_APP_EMAILJS_PUBLIC_KEY` | Your EmailJS public key |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-The page will reload if you make edits.
+---
 
-## Usage Instructions
-
-Open the project folder and Navigate to `/src/components/`. <br/>
-You will find all the components used and you can edit your information accordingly.
-
-### Show your support
-
-Give a ⭐ if you like this website!
-
-<a href="https://www.buymeacoffee.com/soumyajit4419" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="Buy Me A Coffee" height= "60px" width= "217px" ></a>
+*This is a personal portfolio site. Original template by [Soumyajit Behera](https://github.com/soumyajit4419/Portfolio), heavily customized.*
