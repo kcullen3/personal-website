@@ -64,8 +64,8 @@ function AboutCard() {
               </li>
             </ul>
 
-            <p style={{ color: "var(--accent1)" }}>
-              {"\"I don't know what to put for this quote yet!\""}
+            <p style={{ color: "var(--accent1)", marginTop: "16px" }}>
+              {"\"All that we see comes from the stars, the Earth, and each other.\""}
             </p>
             <footer className="blockquote-footer">Keigan</footer>
           </blockquote>
