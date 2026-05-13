@@ -21,7 +21,7 @@ const bodyStyle = {
     color: "var(--text)",
     fontFamily: "Lato, sans-serif",
     lineHeight: "1.9",
-    fontSize: "1.25em",
+    fontSize: "var(--font-lg)",
     paddingLeft: "24px",
     paddingRight: "24px",
     textAlign: "left",
@@ -58,7 +58,7 @@ function WaveformComparisons() {
             <h4 style={{ color: "var(--primary)", fontFamily: "Nunito, sans-serif", marginBottom: "4px" }}>
                 Computational Physics Research
             </h4>
-            <p style={{ color: "var(--accent1)", fontSize: "0.9em", marginBottom: "20px" }}>
+            <p style={{ color: "var(--accent1)", fontSize: "var(--font-sm)", marginBottom: "20px" }}>
                 UMass Dartmouth &bull; 2020–2022
             </p>
 

@@ -70,7 +70,7 @@ function Slideshow({ slides, description, descriptionSide = "right", noBorder = 
                         textAlign: "center",
                         color: "rgba(255,255,255,0.55)",
                         fontFamily: "Lato, sans-serif",
-                        fontSize: "0.85em",
+                        fontSize: "var(--font-sm)",
                         fontStyle: "italic",
                         marginTop: "8px",
                         marginBottom: 0,
@@ -110,7 +110,7 @@ function Slideshow({ slides, description, descriptionSide = "right", noBorder = 
                 color: "rgba(255,255,255,0.85)",
                 fontFamily: "Lato, sans-serif",
                 lineHeight: "1.9",
-                fontSize: "1.05em",
+                fontSize: "var(--font-base)",
             }}>
                 {description}
             </p>

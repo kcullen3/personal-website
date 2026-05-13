@@ -8,7 +8,7 @@ function Home2() {
       <Container>
         <Row className="justify-content-center">
           <Col md={8} className="home-about-description">
-            <h1 style={{ fontSize: "2.0em" }}>
+            <h1 style={{ fontSize: "var(--font-2xl)" }}>
               WEBSITE'S CURRENTLY UNDER <span className="cyan"> DEVELOPMENT </span>
             </h1>
           </Col>

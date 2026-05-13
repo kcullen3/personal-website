@@ -35,7 +35,7 @@ const bodyStyle = {
     color: "var(--text)",
     fontFamily: "Lato, sans-serif",
     lineHeight: "1.9",
-    fontSize: "1.25em",
+    fontSize: "var(--font-lg)",
     paddingLeft: "24px",
     paddingRight: "24px",
     textAlign: "left",

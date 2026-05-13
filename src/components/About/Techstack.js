@@ -11,6 +11,8 @@ import Terminal from "../../Assets/TechIcons/Terminal.svg";
 import Julia from "../../Assets/TechIcons/Julia.svg";
 import CSS from "../../Assets/TechIcons/Css.svg";
 import Pandas from "../../Assets/TechIcons/Pandas.svg";
+import Latex from "../../Assets/TechIcons/Latex.svg";
+import SQL from "../../Assets/TechIcons/SQL.svg";
 
 function Techstack() {
   return (
@@ -40,6 +42,10 @@ function Techstack() {
         <div className="tech-icons-text">Git</div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
+        <img src={Latex} alt="latex" />
+        <div className="tech-icons-text">LaTeX</div>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
         <img src={Javascript} alt="javascript" />
         <div className="tech-icons-text">Javascript</div>
       </Col>
@@ -54,6 +60,10 @@ function Techstack() {
       <Col xs={4} md={2} className="tech-icons">
         <img src={CSS} alt="CSS" />
         <div className="tech-icons-text">CSS</div>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <img src={SQL} alt="sql" />
+        <div className="tech-icons-text">SQL</div>
       </Col>
     </Row>
   );

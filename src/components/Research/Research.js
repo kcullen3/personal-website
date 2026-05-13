@@ -39,7 +39,7 @@ function Research() {
                     <p style={{
                         color: "rgba(255,255,255,0.7)",
                         fontFamily: "Lato, sans-serif",
-                        fontSize: "1.05em",
+                        fontSize: "var(--font-base)",
                         marginTop: "-6px",
                         marginBottom: "40px",
                     }}>
@@ -67,22 +67,22 @@ function Research() {
                                         <h2 style={{
                                             color: "white",
                                             fontFamily: "Nunito, sans-serif",
-                                            fontSize: "1.5em",
+                                            fontSize: "var(--font-xl)",
                                             marginBottom: "4px",
                                         }}>
                                             {proj.title}
                                         </h2>
-                                        <p style={{ color: "var(--primary)", fontSize: "0.9em", fontFamily: "Lato, sans-serif", marginBottom: "2px" }}>
+                                        <p style={{ color: "var(--primary)", fontSize: "var(--font-sm)", fontFamily: "Lato, sans-serif", marginBottom: "2px" }}>
                                             {proj.subtitle}
                                         </p>
-                                        <p style={{ color: "var(--accent1)", fontSize: "0.85em", fontFamily: "Lato, sans-serif", marginBottom: "16px" }}>
+                                        <p style={{ color: "var(--accent1)", fontSize: "var(--font-sm)", fontFamily: "Lato, sans-serif", marginBottom: "16px" }}>
                                             {proj.date}
                                         </p>
 
                                         <p style={{
                                             color: "rgba(255,255,255,0.82)",
                                             fontFamily: "Lato, sans-serif",
-                                            fontSize: "1.0em",
+                                            fontSize: "var(--font-base)",
                                             lineHeight: "1.75",
                                             marginBottom: "20px",
                                         }}>
@@ -111,7 +111,7 @@ function Research() {
                                             <span style={{
                                                 color: "rgba(255,255,255,0.35)",
                                                 fontFamily: "Nunito, sans-serif",
-                                                fontSize: "0.9em",
+                                                fontSize: "var(--font-sm)",
                                                 fontStyle: "italic",
                                             }}>
                                                 Full page coming soon

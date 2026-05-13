@@ -67,7 +67,7 @@ const bodyStyle = {
     color: "var(--text)",
     fontFamily: "Lato, sans-serif",
     lineHeight: "1.9",
-    fontSize: "1.25em",
+    fontSize: "var(--font-lg)",
     paddingLeft: "24px",
     paddingRight: "24px",
     textAlign: "left",
@@ -106,7 +106,7 @@ function SmallPdf({ file, label, caption }) {
             <p style={{
                 color: "rgba(255,255,255,0.55)",
                 fontFamily: "Lato, sans-serif",
-                fontSize: "0.9em",
+                fontSize: "var(--font-sm)",
                 fontStyle: "italic",
                 marginBottom: "10px",
             }}>

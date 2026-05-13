@@ -25,7 +25,7 @@ const inputStyle = {
     borderRadius: "8px",
     color: "var(--text)",
     fontFamily: "Lato, sans-serif",
-    fontSize: "1em",
+    fontSize: "var(--font-base)",
 };
 
 const selectStyle = {
@@ -99,7 +99,7 @@ function Contact() {
                                     <h3 style={{ color: "#00E5FF", fontFamily: "Nunito, sans-serif", marginBottom: "12px" }}>
                                         Message Sent!
                                     </h3>
-                                    <p style={{ color: "var(--text)", fontFamily: "Lato, sans-serif", fontSize: "1.1em" }}>
+                                    <p style={{ color: "var(--text)", fontFamily: "Lato, sans-serif", fontSize: "var(--font-md)" }}>
                                         Thanks for reaching out — I'll get back to you soon.
                                     </p>
                                     <Button
@@ -205,7 +205,7 @@ function Contact() {
                                     <div style={{
                                         textAlign: "right",
                                         fontFamily: "Lato, sans-serif",
-                                        fontSize: "0.85em",
+                                        fontSize: "var(--font-sm)",
                                         color: form.message.length >= MAX_CHARS ? "#ff6b6b" : "rgba(255,255,255,0.4)",
                                         marginBottom: "20px",
                                     }}>

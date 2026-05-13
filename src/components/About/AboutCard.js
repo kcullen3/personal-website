@@ -17,8 +17,8 @@ function AboutCard() {
             <p style={{ textAlign: "justify" }}>
               Whether he's writing code, facilitating a healing session,
               wiring a new component or diving into consciousness research,
-              the throughline is always the same — a relentless curiosity
-              about what lies just beyond the edge of what we think is possible.
+              the throughline is always the same — <em className="white">a relentless curiosity
+                about what lies just beyond the edge of what we think is possible.</em>
             </p>
 
             <ul>
@@ -65,7 +65,7 @@ function AboutCard() {
             </ul>
 
             <p style={{ color: "var(--accent1)", marginTop: "16px" }}>
-              {"\"All that we see comes from the stars, the Earth, and each other.\""}
+              <em>{"\"All that we see comes from the stars, the Earth, and each other.\""}</em>
             </p>
             <footer className="blockquote-footer">Keigan</footer>
           </blockquote>

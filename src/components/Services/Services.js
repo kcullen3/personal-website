@@ -12,28 +12,34 @@ import tech from "../../Assets/Services/tech.jpg";
 const SERVICES = [
     {
         title: "Business Consulting",
-        description: "Strategic advisory for startups, nonprofits, and purpose-driven organizations. A rare combination of scientific rigor, startup experience, and intuitive insight that most consultants simply can't offer.",
+        description: `Physics training, startup experience, genuine psychic ability. 
+        Most consultants offer one. I bring all three to the problems your current strategy can't crack`,
         img: consulting,
         url: "/contact",
         isExternal: false,
     },
     {
         title: "Web Design & Development",
-        description: "Full-stack web presence built with intention — not just functional, but an authentic expression of your brand and vision.",
+        description: `Your website should feel like you — not a template with your logo on it. 
+        I build web presence that's functional, distinctive, and actually yours.`,
         img: website,
         url: "/contact",
         isExternal: false,
     },
     {
         title: "Technical Consulting",
-        description: "Engineering and research expertise applied to real problems. Especially strong for organizations building at the edge of what's possible.",
+        description: `The gap between 'we need this technology' and 'this technology actually 
+        works for us' is where most teams get stuck. I close that gap — from AI implementation 
+        to full systems engineering — without the chaos of figuring it out alone.`,
         img: tech,
         url: "/contact",
         isExternal: false,
     },
     {
         title: "Earth Healing",
-        description: "Professional energy healing and psychic services. A unique credibility bridge — a physicist and researcher who also genuinely heals.",
+        description: `Energy and trauma stay stuck in the body long after the mind has moved on — 
+        as a certified Reiki practitioner and intuitive reader with a physics background, 
+        I work at the level where most healing methods can't reach.`,
         img: healing,
         url: "https://earthhealing.life/",
         isExternal: true,
@@ -58,7 +64,7 @@ function Services() {
                 <p style={{
                     color: "rgba(255,255,255,0.6)",
                     fontFamily: "Lato, sans-serif",
-                    fontSize: "1.25em",
+                    fontSize: "var(--font-lg)",
                     marginBottom: "40px",
                 }}>
                     What I bring to the table — and how I can help you.

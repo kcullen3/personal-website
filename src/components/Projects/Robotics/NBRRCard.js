@@ -25,7 +25,7 @@ const bodyStyle = {
     color: "var(--text)",
     fontFamily: "Lato, sans-serif",
     lineHeight: "1.9",
-    fontSize: "1.25em",
+    fontSize: "var(--font-lg)",
     paddingLeft: "24px",
     paddingRight: "24px",
     textAlign: "left",
@@ -57,7 +57,7 @@ function NBRRCard() {
                     <h4 style={{ color: "var(--primary)", fontFamily: "Nunito, sans-serif", marginBottom: "4px" }}>
                         {CONTENT.subtitle}
                     </h4>
-                    <p style={{ color: "var(--accent1)", fontSize: "0.9em", marginBottom: "16px" }}>
+                    <p style={{ color: "var(--accent1)", fontSize: "var(--font-sm)", marginBottom: "16px" }}>
                         {CONTENT.date}
                     </p>
                     <p style={{ ...bodyStyle, marginBottom: "12px" }}>

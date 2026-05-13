@@ -28,8 +28,8 @@ const timelineData = [
         icon: "🤖",
         bullets: [
             "Third hire at a nonprofit building a technology and research ecosystem",
-            "Led AI development, rapid prototyping, and 3D design projects",
-            "Managed interns, wrote grants, and ran K-12 education programs",
+            "Led AI development, rapid prototyping, and complex system design",
+            "Managed both interns and projects, wrote grants, and ran K-12 education programs",
         ],
     },
     {

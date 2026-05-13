@@ -22,7 +22,7 @@ function About() {
 
           {/* About Me Heading — outside the box */}
           <h1 style={{
-            fontSize: "2.1em",
+            fontSize: "var(--font-2xl)",
             paddingBottom: "20px",
             paddingTop: "30px",
             textAlign: "center",
@@ -86,7 +86,7 @@ function About() {
       <Container>
         <Row style={{ paddingTop: "50px", paddingBottom: "80px" }}>
           <Col md={12} className="home-about-social">
-            <p style={{ fontSize: "2.0em" }}>
+            <p style={{ fontSize: "var(--font-2xl)" }}>
               <span className="cyan">Check me out </span> here too!
             </p>
             <ul className="home-about-social-links">

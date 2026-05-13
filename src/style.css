@@ -32,6 +32,31 @@ html {
       var(--background_lighter));
 
   --imp-text-color: var(--accent1);
+
+  /* Font scale */
+  --font-xs: 0.75rem;
+  --font-sm: 0.85rem;
+  --font-base: 1rem;
+  --font-md: 1.1rem;
+  --font-lg: 1.25rem;
+  --font-xl: 1.5rem;
+  --font-2xl: 2rem;
+  --font-3xl: 2.4rem;
+  --font-4xl: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  html {
+    --font-xs: 0.6rem;
+    --font-sm: 0.7rem;
+    --font-base: 0.8rem;
+    --font-md: 0.9rem;
+    --font-lg: 1rem;
+    --font-xl: 1.15rem;
+    --font-2xl: 1.4rem;
+    --font-3xl: 1.6rem;
+    --font-4xl: 1.7rem;
+  }
 }
 
 .cyan {
@@ -100,7 +125,7 @@ button:focus {
   position: fixed !important;
   transition: all 0.3s ease-out 0s !important;
   padding: 0.3rem 2rem !important;
-  font-size: 1.2rem !important;
+  font-size: var(--font-md) !important;
 }
 
 .navbar-toggler {
@@ -156,7 +181,7 @@ button:focus {
 @media (max-width: 767px) {
   .navbar {
     padding: 1rem 2rem !important;
-    font-size: 1.4rem !important;
+    font-size: var(--font-xl) !important;
     background-color: #0B0C1E !important;
   }
 
@@ -296,12 +321,12 @@ button:focus {
 }
 
 .heading {
-  font-size: 2.4em !important;
+  font-size: var(--font-3xl) !important;
   padding-left: 45px !important;
 }
 
 .heading-name {
-  font-size: 2.5em !important;
+  font-size: var(--font-4xl) !important;
   padding-left: 45px !important;
 }
 
@@ -336,7 +361,7 @@ button:focus {
 
 .home-about-body {
   padding-top: 50px;
-  font-size: 1.2em !important;
+  font-size: var(--font-md) !important;
   text-align: left;
 }
 
@@ -360,7 +385,7 @@ button:focus {
   width: 40px !important;
   height: 40px !important;
   text-align: center !important;
-  font-size: 1.2em !important;
+  font-size: var(--font-md) !important;
   line-height: 2em !important;
   background: rgba(255, 255, 255, 0.972) !important;
   border-radius: 50% !important;
@@ -430,7 +455,7 @@ button:focus {
 }
 
 .footer h3 {
-  font-size: 1em;
+  font-size: var(--font-base);
   color: white !important;
   margin-top: 0.5em !important;
   margin-bottom: 0.5em !important;
@@ -456,7 +481,7 @@ button:focus {
 
 .project-heading {
   color: white !important;
-  font-size: 2.3em !important;
+  font-size: var(--font-3xl) !important;
   font-weight: 500 !important;
   padding-top: 20px !important;
 }
@@ -526,7 +551,7 @@ select option {
   display: flex !important;
   align-self: center !important;
   justify-content: center !important;
-  font-size: 1rem !important;
+  font-size: var(--font-base) !important;
   margin: 15px !important;
   padding: 10px 20px !important;
   opacity: 0.93 !important;
@@ -671,7 +696,7 @@ select option {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5em;
+  font-size: var(--font-xl);
   box-shadow: 0 0 12px rgba(155, 114, 207, 0.4);
   transition: all 0.3s ease;
   margin-bottom: 16px;
@@ -702,7 +727,7 @@ select option {
 
 .timeline-title {
   font-family: "Nunito", sans-serif !important;
-  font-size: 0.95em !important;
+  font-size: var(--font-sm) !important;
   font-weight: 700 !important;
   color: white !important;
   margin-bottom: 4px !important;
@@ -710,7 +735,7 @@ select option {
 
 .timeline-date {
   font-family: "Lato", sans-serif;
-  font-size: 0.78em;
+  font-size: var(--font-xs);
   color: var(--accent1);
   margin-bottom: 8px;
 }
@@ -733,7 +758,7 @@ select option {
 
 .timeline-bullets ul li {
   font-family: "Lato", sans-serif;
-  font-size: 0.78em;
+  font-size: var(--font-xs);
   color: rgba(255, 255, 255, 0.8);
   padding: 4px 0;
   border-bottom: 1px solid rgba(155, 114, 207, 0.1);
@@ -796,7 +821,7 @@ select option {
   padding: 8px 18px;
   color: rgba(255, 255, 255, 0.85);
   font-family: "Lato", sans-serif;
-  font-size: 1.0em;
+  font-size: var(--font-base);
   transition: all 0.3s ease;
 }
 
@@ -890,7 +915,7 @@ select option {
   background: rgba(11, 12, 30, 0.7);
   border: 1px solid var(--primary);
   color: white;
-  font-size: 2em;
+  font-size: var(--font-2xl);
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -919,7 +944,7 @@ select option {
 .slideshow-caption {
   color: var(--text);
   font-family: "Lato", sans-serif;
-  font-size: 1.0em;
+  font-size: var(--font-base);
   margin-top: 14px;
   font-style: italic;
 }
@@ -936,7 +961,7 @@ select option {
   background: none;
   border: 1px solid var(--primary);
   color: white;
-  font-size: 1.1em;
+  font-size: var(--font-md);
   width: 26px;
   height: 26px;
   border-radius: 50%;

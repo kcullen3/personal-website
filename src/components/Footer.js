@@ -15,7 +15,7 @@ function Footer() {
       <Row>
         <Col md="4" className="footer-copywright">
           <h3>Built by Keigan Cullen</h3>
-         <p style={{ fontSize: "0.75em", opacity: 0.7 }}>
+         <p style={{ fontSize: "var(--font-xs)", opacity: 0.7 }}>
             Original design by{" "}
             <a href="https://github.com/soumyajit4419/Portfolio" 
             target="_blank" rel="noopener noreferrer">

@@ -8,6 +8,9 @@ import Office from "../../Assets/TechIcons/MicrosoftOffice.svg";
 import Workspace from "../../Assets/TechIcons/GoogleWorkspace.svg";
 import Claude from "../../Assets/TechIcons/Claude.svg";
 import Rhino from "../../Assets/TechIcons/Rhino 8.svg";
+import Supabase from "../../Assets/TechIcons/Supabase.png";
+import Vercel from "../../Assets/TechIcons/Vercel.svg";
+
 
 function Toolstack() {
   return (
@@ -43,6 +46,14 @@ function Toolstack() {
       <Col xs={4} md={2} className="tech-icons">
         <img src={Rhino} alt="Rhino" className="tech-icon-images" />
         <div className="tech-icons-text">Rhino 8</div>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <img src={Vercel} alt="Vercel" className="tech-icon-images" />
+        <div className="tech-icons-text">Vercel</div>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <img src={Supabase} alt="Supabase" className="tech-icon-images" />
+        <div className="tech-icons-text">Supabase</div>
       </Col>
     </Row>
   );
