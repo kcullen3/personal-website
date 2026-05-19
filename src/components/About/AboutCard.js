@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
+import { BsBoxArrowUpRight } from "react-icons/bs";
 
 function AboutCard() {
   return (
@@ -27,8 +28,13 @@ function AboutCard() {
               </li>
               <li className="about-activity">
                 {"🛠️ Building "}
-                <a href="projects/backscratch" style={{ color: "var(--accent1_dull)" }}>
-                  BackScratch
+                <a
+                  href="https://backscratch.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: "var(--accent1_dull)", textDecoration: "underline" }}
+                >
+                  BackScratch <BsBoxArrowUpRight size={9} />
                 </a>
                 {" — a community platform for small businesses"}
               </li>
@@ -45,7 +51,7 @@ function AboutCard() {
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ color: "var(--accent1_dull)" }}>
-                  Instagram
+                  Instagram <BsBoxArrowUpRight size={9} />
                 </a>
                 {" — for the scientist & spiritual seeker alike"}
               </li>

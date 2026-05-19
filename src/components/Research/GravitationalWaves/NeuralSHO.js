@@ -94,7 +94,7 @@ function NeuralSHO() {
                 </Col>
                 <Col md={4}>
                     <p style={bodyStyle}>
-                        Another exciting project I worked on was a Neural ODE framework in Julia that learns the governing dynamics
+                        Another exciting project I worked on was a Neural ODE framework using the Julia programming language that learns the governing dynamics
                         of a physical system from trajectory data alone — no equations handed to it, no physics assumed.
                         The simple harmonic oscillator was the chosen testbed deliberately: it is one of the most universal
                         models in all of science, appearing in everything from quantum mechanics and electrical circuits to

@@ -94,10 +94,10 @@ function Torus() {
                         surface that folds endlessly back into itself, with no inside and no outside. In physics,
                         it describes the topology of spacetime under certain models and the structure of planetary
                         magnetic fields. Beyond the mathematical signifigance, it's visually stunning too.
-                        It's one of those things that makes you stop and think and that's exactly why I chose it.
+                        It's one of those things that makes you stop and think — and that's exactly why I chose it.
                     </p>
                     <p style={{ ...bodyStyle, marginBottom: 0 }}>
-                        The Torus was never just a print. It was a demonstration that a small nonprofit in New
+                        The Torus was never just a cool print. It was a demonstration that a small nonprofit in New
                         Bedford could produce something most well-funded labs couldn't. The day it went up, I held
                         my breath the entire time. It still hangs in the NBRR facility today — lit, permanent, and
                         entirely unique.

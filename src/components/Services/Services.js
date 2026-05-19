@@ -12,18 +12,33 @@ import tech from "../../Assets/Services/tech.jpg";
 const SERVICES = [
     {
         title: "Business Consulting",
-        description: `Physics training, startup experience, genuine psychic ability. 
-        Most consultants offer one. I bring all three to the problems your current strategy can't crack`,
+        description: `A founder with physics training, startup experience & genuine psychic ability. 
+        Most consultants offer one. I bring all four to the problems your current strategy can't crack.`,
         img: consulting,
         url: "/contact",
         isExternal: false,
     },
     {
-        title: "Web Design & Development",
-        description: `Your website should feel like you — not a template with your logo on it. 
-        I build web presence that's functional, distinctive, and actually yours.`,
+        title: "Web Design & Brand Dev",
+        description: (
+            <>
+                <div style={{ marginBottom: "8px" }}>Your online brand should feel like you — not a template with your logo on it.
+                    I build web presence that's functional, distinctive, and actually yours. Some recent sites I've built:</div>
+                <ul style={{ margin: 0, paddingLeft: "18px" }}>
+                    <li><a href="https://kcullen3.github.io/personal-website" rel="noopener noreferrer"
+                        style={{ color: "var(--accent1_dull)", textDecoration: "underline" }}>
+                        This One</a></li>
+                    <li><a href="https://backscratch.vercel.app/" target="_blank" rel="noopener noreferrer"
+                        style={{ color: "var(--accent1_dull)", textDecoration: "underline" }}>
+                        BackScratch</a></li>
+                    {/*<li><a href="https://example.com/" target="_blank" rel="noopener noreferrer"
+                    style={{ color: "var(--accent1_dull)", textDecoration: "underline" }}>
+                    Example Project</a></li>*/}
+                </ul>
+            </>
+        ),
         img: website,
-        url: "/contact",
+        url: "/projects/portfolio",
         isExternal: false,
     },
     {

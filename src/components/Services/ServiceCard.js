@@ -46,7 +46,12 @@ function ServiceCard({ title, description, img, imgAlt, url, isExternal }) {
                             : <Link to={url} style={{ color: "var(--accent1_dull)", lineHeight: 1 }}><BsBoxArrowUpRight size={14} /></Link>
                     )}
                 </h4>
-                <p style={bodyStyle}>{description}</p>
+
+                {typeof description === "string" || typeof description === "number" ? (
+                    <p style={bodyStyle}>{description}</p>
+                ) : (
+                    <div style={bodyStyle}>{description}</div>
+                )}
             </Card.Body>
         </Card>
     );
