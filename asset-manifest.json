@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/personal-website/static/css/main.b99fc277.css",
-    "main.js": "/personal-website/static/js/main.400e6233.js",
+    "main.js": "/personal-website/static/js/main.b0521212.js",
     "static/js/453.0437a03d.chunk.js": "/personal-website/static/js/453.0437a03d.chunk.js",
     "static/media/NBRRAction.mp4": "/personal-website/static/media/NBRRAction.8e609eaeece05e8c687b.mp4",
     "static/media/TorusVideo_web.mp4": "/personal-website/static/media/TorusVideo_web.c3793ad8f2c64e50d5ac.mp4",
@@ -37,6 +37,7 @@
     "static/media/art.jpg": "/personal-website/static/media/art.05ec818f365a87c8a694.jpg",
     "static/media/website.jpg": "/personal-website/static/media/website.1b6fe0c6e6e3a0ddd6dc.jpg",
     "static/media/SplinterCablesConnectorsIOs.pdf": "/personal-website/static/media/SplinterCablesConnectorsIOs.15773269fb7bf6cecf63.pdf",
+    "static/media/landing.png": "/personal-website/static/media/landing.0bd3e7358ab4d8b4d902.png",
     "static/media/Supabase.png": "/personal-website/static/media/Supabase.5e0e16aafc2ad443f382.png",
     "static/media/logo.png": "/personal-website/static/media/logo.8cf3e36ce49c8f6b138b.png",
     "static/media/logomain.png": "/personal-website/static/media/logomain.8cf3e36ce49c8f6b138b.png",
@@ -64,11 +65,11 @@
     "static/media/Terminal.svg": "/personal-website/static/media/Terminal.25baf38429b4d3dea5e81cc6399ae0ab.svg",
     "static/media/Vercel.svg": "/personal-website/static/media/Vercel.e1bb3e6b25122ed3363cf1a4e2a6c534.svg",
     "main.b99fc277.css.map": "/personal-website/static/css/main.b99fc277.css.map",
-    "main.400e6233.js.map": "/personal-website/static/js/main.400e6233.js.map",
+    "main.b0521212.js.map": "/personal-website/static/js/main.b0521212.js.map",
     "453.0437a03d.chunk.js.map": "/personal-website/static/js/453.0437a03d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b99fc277.css",
-    "static/js/main.400e6233.js"
+    "static/js/main.b0521212.js"
   ]
 }
