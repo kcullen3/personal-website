@@ -21,8 +21,11 @@
   2. style.css contains exactly one `.navbar-nav .nav-link` declaration block
   3. Lato and Nunito fonts load correctly in the browser (visible in DevTools Network tab as Google Fonts requests)
   4. Techstack icons render at the same visual height as Toolstack icons on the About page
-**Plans**: TBD
-**UI hint**: yes
+**Plans**: 2 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Delete Home2.js dead code and fix font imports in index.css (CLEAN-01, STYLE-01)
+- [ ] 01-02-PLAN.md — Merge duplicate CSS nav-link blocks and add icon className to Techstack (CLEAN-02, STYLE-02, D-06)
 
 ### Phase 2: Mobile Responsiveness
 **Goal**: The About page image displays correctly on mobile and all pages are usable at 375px and 768px viewports
@@ -39,5 +42,5 @@
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Code & Style Fixes | 0/0 | Not started | - |
+| 1. Code & Style Fixes | 0/2 | Not started | - |
 | 2. Mobile Responsiveness | 0/0 | Not started | - |
