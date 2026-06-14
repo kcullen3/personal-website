@@ -7,7 +7,7 @@
 
 ## Phases
 
-- [ ] **Phase 1: Code & Style Fixes** - Remove dead code and resolve visual inconsistencies (fonts, icon sizing, duplicate CSS)
+- [x] **Phase 1: Code & Style Fixes** - Remove dead code and resolve visual inconsistencies (fonts, icon sizing, duplicate CSS) (completed 2026-06-14)
 - [ ] **Phase 2: Mobile Responsiveness** - Fix responsive layout issues and verify all pages at target breakpoints
 
 ## Phase Details
@@ -27,8 +27,8 @@
 **Plans**: 2 plans
 Plans:
 
-- [ ] 01-01-PLAN.md — Delete Home2.js dead code and fix font imports in index.css (CLEAN-01, STYLE-01)
-- [ ] 01-02-PLAN.md — Merge duplicate CSS nav-link blocks and add icon className to Techstack (CLEAN-02, STYLE-02, D-06)
+- [x] 01-01-PLAN.md — Delete Home2.js dead code and fix font imports in index.css (CLEAN-01, STYLE-01)
+- [x] 01-02-PLAN.md — Merge duplicate CSS nav-link blocks and add icon className to Techstack (CLEAN-02, STYLE-02, D-06)
 
 ### Phase 2: Mobile Responsiveness
 
@@ -56,5 +56,5 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Code & Style Fixes | 0/2 | Not started | - |
+| 1. Code & Style Fixes | 2/2 | Complete   | 2026-06-14 |
 | 2. Mobile Responsiveness | 0/3 | Not started | - |
