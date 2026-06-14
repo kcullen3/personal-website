@@ -4,12 +4,13 @@ import macOs from "../../Assets/TechIcons/Apple MacOSX.svg";
 import chrome from "../../Assets/TechIcons/Google Chrome.svg";
 import vsCode from "../../Assets/TechIcons/vscode.svg";
 import Windows from "../../Assets/TechIcons/Windows.svg";
-import Office from "../../Assets/TechIcons/MicrosoftOffice.svg";
 import Workspace from "../../Assets/TechIcons/GoogleWorkspace.svg";
 import Claude from "../../Assets/TechIcons/Claude.svg";
+import n8n from "../../Assets/TechIcons/n8n.svg";
 import Rhino from "../../Assets/TechIcons/Rhino 8.svg";
 import Supabase from "../../Assets/TechIcons/Supabase.png";
 import Vercel from "../../Assets/TechIcons/Vercel.svg";
+import Sentry from "../../Assets/TechIcons/sentry.svg";
 
 
 function Toolstack() {
@@ -28,10 +29,6 @@ function Toolstack() {
         <div className="tech-icons-text">Google Chrome</div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <img src={Office} alt="Office" className="tech-icon-images" />
-        <div className="tech-icons-text"> Microsoft Office</div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
         <img src={Workspace} alt="Workspace" className="tech-icon-images" />
         <div className="tech-icons-text">Google Workspace</div>
       </Col>
@@ -42,6 +39,10 @@ function Toolstack() {
       <Col xs={4} md={2} className="tech-icons ">
         <img src={vsCode} alt="vsCode" className="tech-icon-images" />
         <div className="tech-icons-text">Vs Code</div>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons ">
+        <img src={n8n} alt="n8n" className="tech-icon-images" />
+        <div className="tech-icons-text">n8n</div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <img src={Rhino} alt="Rhino" className="tech-icon-images" />
@@ -54,6 +55,10 @@ function Toolstack() {
       <Col xs={4} md={2} className="tech-icons">
         <img src={Supabase} alt="Supabase" className="tech-icon-images" />
         <div className="tech-icons-text">Supabase</div>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <img src={Sentry} alt="Sentry" className="tech-icon-images" />
+        <div className="tech-icons-text">Sentry</div>
       </Col>
     </Row>
   );
