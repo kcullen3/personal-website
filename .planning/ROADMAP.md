@@ -45,8 +45,8 @@ Plans:
 Plans:
 **Wave 1**
 
-- [ ] 02-01-PLAN.md — Normalize breakpoints to 767px and add .about-img + .nbrr-collage CSS rules (MOBL-01, MOBL-02, MOBL-03)
-- [ ] 02-02-PLAN.md — Remove paddingTop inline style from About.js and replace NBRRCard inline grid with className (MOBL-01, MOBL-02)
+- [x] 02-01-PLAN.md — Normalize breakpoints to 767px and add .about-img + .nbrr-collage CSS rules (MOBL-01, MOBL-02, MOBL-03)
+- [x] 02-02-PLAN.md — Remove paddingTop inline style from About.js and replace NBRRCard inline grid with className (MOBL-01, MOBL-02)
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
@@ -57,4 +57,4 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Code & Style Fixes | 2/2 | Complete   | 2026-06-14 |
-| 2. Mobile Responsiveness | 0/3 | Not started | - |
+| 2. Mobile Responsiveness | 2/3 | In Progress|  |
