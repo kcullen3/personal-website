@@ -412,17 +412,17 @@ Pages reachable from the nav (D-01):
 
 ---
 
-## Open Questions
+## Open Questions (RESOLVED)
 
 1. **Home heading overflow at 375px**
    - What we know: `.heading` and `.heading-name` have `padding-left: 45px` with no mobile override. At 375px this is large but the col is full-width.
    - What's unclear: whether text clips or overflows at 375px or 768px.
-   - Recommendation: Verify in DevTools. If text is clipped or causes horizontal scroll, add the mobile override shown in Pattern 4. Otherwise skip.
+   - RESOLVED: The mobile override (padding-left: 15px) is applied unconditionally in Plan 03 Task 1 per D-02 (fix any mobile issue in this phase). No visual audit step needed for this question.
 
 2. **ArtEngineering 3-col image grid**
    - What we know: `gridTemplateColumns: "1fr 1fr 1fr"` inline. Images have `height: auto`.
    - What's unclear: whether three auto-height images at ~110px wide look acceptable or broken.
-   - Recommendation: Verify visually at 375px. If images are too small to read, add `.art-collage` class and `grid-template-columns: 1fr` on mobile.
+   - RESOLVED: The .art-collage class and 1-col mobile layout is applied unconditionally in Plan 03 Task 1 per D-02. Both questions are closed by Task 1 implementation.
 
 ---
 

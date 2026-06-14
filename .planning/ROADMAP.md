@@ -42,11 +42,14 @@ Plans:
   3. At 768px viewport: all pages render with correct tablet layout and no broken elements
 
 **Plans**: 3 plans
-
 Plans:
+**Wave 1**
 
 - [ ] 02-01-PLAN.md — Normalize breakpoints to 767px and add .about-img + .nbrr-collage CSS rules (MOBL-01, MOBL-02, MOBL-03)
 - [ ] 02-02-PLAN.md — Remove paddingTop inline style from About.js and replace NBRRCard inline grid with className (MOBL-01, MOBL-02)
+
+**Wave 2** *(blocked on Wave 1 completion)*
+
 - [ ] 02-03-PLAN.md — Apply conditional fixes for heading/Torus/ArtEngineering and human audit all routes at 375px + 768px (MOBL-01, MOBL-02, MOBL-03)
 
 ## Progress
