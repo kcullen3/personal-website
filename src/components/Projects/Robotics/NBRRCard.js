@@ -116,11 +116,7 @@ function NBRRCard() {
             </div>
 
             {/* Row 3: collage — nbrrbooth | timelapse | event1 | event2 */}
-            <div style={{
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr 1fr 1fr",
-                gap: "8px",
-            }}>
+            <div className="nbrr-collage">
                 <img src={nbrrBooth} alt="NBRR booth" style={collageStyle} />
                 <video
                     autoPlay
