@@ -49,9 +49,9 @@ function Torus() {
                 <Col md={6} className="text-center">
                     <video
                         controls
+                        className="torus-video"
                         style={{
                             width: "100%",
-                            height: "500px",
                             objectFit: "contain",
                             borderRadius: "12px",
                             display: "block",

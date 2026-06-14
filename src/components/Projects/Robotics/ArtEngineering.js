@@ -82,12 +82,7 @@ function CommunityCollaboration() {
                     <p style={{ ...bodyStyle, marginBottom: 0 }}>{CONTENT.para3}</p>
                 </Col>
                 <Col md={6}>
-                    <div style={{
-                        display: "grid",
-                        gridTemplateColumns: "1fr 1fr 1fr",
-                        gap: "8px",
-                        alignItems: "center",
-                    }}>
+                    <div className="art-collage" style={{ alignItems: "center" }}>
                         <img src={artist1} alt="Artist residency" style={collageStyle} />
                         <video
                             autoPlay

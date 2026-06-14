@@ -1014,3 +1014,33 @@ select option {
     grid-template-columns: 1fr 1fr;
   }
 }
+
+/* === MOBILE FIXES (Phase 02) === */
+@media (max-width: 767px) {
+  .heading,
+  .heading-name {
+    padding-left: 15px !important;
+  }
+}
+
+.torus-video {
+  height: 500px;
+}
+
+@media (max-width: 767px) {
+  .torus-video {
+    height: 250px;
+  }
+}
+
+.art-collage {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+}
+
+@media (max-width: 767px) {
+  .art-collage {
+    grid-template-columns: 1fr;
+  }
+}
