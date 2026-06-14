@@ -35,12 +35,16 @@ Plans:
   1. About page profile image column has no hardcoded `paddingTop: "120px"` inline style — padding is controlled by responsive CSS
   2. At 375px viewport: no page shows horizontal scroll, all text is readable, and the navbar opens/closes correctly
   3. At 768px viewport: all pages render with correct tablet layout and no broken elements
-**Plans**: TBD
-**UI hint**: yes
+**Plans**: 3 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — Normalize breakpoints to 767px and add .about-img + .nbrr-collage CSS rules (MOBL-01, MOBL-02, MOBL-03)
+- [ ] 02-02-PLAN.md — Remove paddingTop inline style from About.js and replace NBRRCard inline grid with className (MOBL-01, MOBL-02)
+- [ ] 02-03-PLAN.md — Apply conditional fixes for heading/Torus/ArtEngineering and human audit all routes at 375px + 768px (MOBL-01, MOBL-02, MOBL-03)
 
 ## Progress
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Code & Style Fixes | 0/2 | Not started | - |
-| 2. Mobile Responsiveness | 0/0 | Not started | - |
+| 2. Mobile Responsiveness | 0/3 | Not started | - |
