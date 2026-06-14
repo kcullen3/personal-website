@@ -2,9 +2,8 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: Site Polish & Cleanup
-status: in_progress
-last_updated: "2026-06-13"
-last_activity: 2026-06-13
+status: Not started
+last_updated: "2026-06-14T00:21:42.871Z"
 progress:
   total_phases: 2
   completed_phases: 0
@@ -38,11 +37,13 @@ progress:
 ## Accumulated Context
 
 ### Decisions
+
 - Keep particle animations on all pages (user preference)
 - Keep Research as a dropdown nav item (more pages planned)
 - Fix font imports (add Lato + Nunito to index.css) rather than removing from style.css — both fonts used heavily in CSS
 
 ### Known Issues (going in)
+
 - Home2.js imported in App.js but has no route — renders "WEBSITE UNDER DEVELOPMENT"
 - Duplicate `.navbar-nav .nav-link` block in style.css
 - Lato and Nunito declared in style.css but never imported
@@ -50,9 +51,11 @@ progress:
 - About image column has hardcoded `paddingTop: "120px"` inline style
 
 ### Todos
+
 (none yet)
 
 ### Blockers
+
 (none)
 
 ## Session Continuity
