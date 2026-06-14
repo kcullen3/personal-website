@@ -45,7 +45,7 @@ html {
   --font-4xl: 2.5rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   html {
     --font-xs: 0.6rem;
     --font-sm: 0.7rem;
@@ -602,6 +602,10 @@ select option {
   padding-left: 1px !important;
 }
 
+.about-img {
+  padding-top: 120px;
+}
+
 @media (max-width: 767px) {
   .about-img {
     padding-top: 0 !important;
@@ -767,7 +771,7 @@ select option {
 }
 
 /* Mobile — stack vertically */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .timeline-track {
     flex-direction: column;
     align-items: flex-start;
@@ -996,4 +1000,17 @@ select option {
 .slideshow-dot.active {
   background: var(--accent1);
   box-shadow: 0 0 8px rgba(0, 229, 255, 0.5);
+}
+
+/* === NBRR COLLAGE GRID === */
+.nbrr-collage {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 8px;
+}
+
+@media (max-width: 767px) {
+  .nbrr-collage {
+    grid-template-columns: 1fr 1fr;
+  }
 }
