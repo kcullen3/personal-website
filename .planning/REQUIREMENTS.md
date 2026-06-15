@@ -7,13 +7,13 @@
 
 ### Code Cleanup
 
-- [ ] **CLEAN-01**: Home2.js "under development" component is removed along with its import in App.js
-- [ ] **CLEAN-02**: Duplicate `.navbar-nav .nav-link` CSS declaration removed from style.css
+- [x] **CLEAN-01**: Home2.js "under development" component is removed along with its import in App.js
+- [x] **CLEAN-02**: Duplicate `.navbar-nav .nav-link` CSS declaration removed from style.css
 
 ### Visual Consistency
 
-- [ ] **STYLE-01**: Lato and Nunito fonts imported via Google Fonts in index.css so body/heading font declarations in style.css resolve correctly
-- [ ] **STYLE-02**: Techstack icon images use `tech-icon-images` class for consistent height with Toolstack icons
+- [x] **STYLE-01**: Lato and Nunito fonts imported via Google Fonts in index.css so body/heading font declarations in style.css resolve correctly
+- [x] **STYLE-02**: Techstack icon images use `tech-icon-images` class for consistent height with Toolstack icons
 
 ### Mobile Responsiveness
 
@@ -39,10 +39,10 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| CLEAN-01 | Phase 1 | Pending |
-| CLEAN-02 | Phase 1 | Pending |
-| STYLE-01 | Phase 1 | Pending |
-| STYLE-02 | Phase 1 | Pending |
+| CLEAN-01 | Phase 1 | Complete |
+| CLEAN-02 | Phase 1 | Complete |
+| STYLE-01 | Phase 1 | Complete |
+| STYLE-02 | Phase 1 | Complete |
 | MOBL-01 | Phase 2 | Pending |
 | MOBL-02 | Phase 2 | Pending |
 | MOBL-03 | Phase 2 | Pending |
