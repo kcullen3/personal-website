@@ -197,6 +197,7 @@ button:focus {
 .logo {
   height: 3.0em !important;
   width: 3.5em !important;
+  flex-shrink: 0 !important;
 }
 
 .nav-link {
@@ -309,6 +310,7 @@ button:focus {
   background-repeat: no-repeat;
   padding-bottom: 30px !important;
   padding-top: 30px !important;
+  min-height: 100vh;
 }
 
 .home-content {
@@ -1042,5 +1044,26 @@ select option {
 @media (max-width: 767px) {
   .art-collage {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Tablet navbar: reduce padding + gaps so logo doesn't squish at 768px */
+@media (min-width: 768px) and (max-width: 991px) {
+  .navbar {
+    padding: 0.3rem 0.5rem !important;
+  }
+  .navbar-nav {
+    gap: 4px !important;
+  }
+  .nav-link,
+  .navbar-nav .nav-link {
+    padding: 0.8rem 0.35rem !important;
+  }
+}
+
+/* Mobile navbar: tighter horizontal padding for hamburger breathing room */
+@media (max-width: 767px) {
+  .navbar {
+    padding: 0.3rem 0.75rem !important;
   }
 }
