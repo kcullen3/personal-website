@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/personal-website/static/css/main.de56a043.css",
+    "main.css": "/personal-website/static/css/main.cddf2509.css",
     "main.js": "/personal-website/static/js/main.c95c8dfb.js",
     "static/js/453.96892d07.chunk.js": "/personal-website/static/js/453.96892d07.chunk.js",
     "static/media/NBRRAction.mp4": "/personal-website/static/media/NBRRAction.8e609eaeece05e8c687b.mp4",
@@ -69,12 +69,12 @@
     "static/media/Css.svg": "/personal-website/static/media/Css.9f893d6b011804fec7ae0e5a28448208.svg",
     "static/media/Terminal.svg": "/personal-website/static/media/Terminal.25baf38429b4d3dea5e81cc6399ae0ab.svg",
     "static/media/Vercel.svg": "/personal-website/static/media/Vercel.7afd46cbfebe75e17fafa99a57ff1404.svg",
-    "main.de56a043.css.map": "/personal-website/static/css/main.de56a043.css.map",
+    "main.cddf2509.css.map": "/personal-website/static/css/main.cddf2509.css.map",
     "main.c95c8dfb.js.map": "/personal-website/static/js/main.c95c8dfb.js.map",
     "453.96892d07.chunk.js.map": "/personal-website/static/js/453.96892d07.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.de56a043.css",
+    "static/css/main.cddf2509.css",
     "static/js/main.c95c8dfb.js"
   ]
 }
