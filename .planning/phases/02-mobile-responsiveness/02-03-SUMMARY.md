@@ -52,13 +52,33 @@ All new CSS appended to `src/style.css` under `/* === MOBILE FIXES (Phase 02) ==
 
 Note on torus-video count: The string "torus-video" appears on 2 lines in style.css (the two `.torus-video` selector lines). The height property lines inside those blocks do not contain the string "torus-video", so grep returns 2. The CSS structure is correct: base rule + @media override.
 
+## Task 2: Human Audit — 375px and 768px (APPROVED)
+
+Additional fixes applied during audit cycle before approval.
+
+**Audit finding: Logo squished at 768px (commit: 11e2f0a)**
+At `expand="md"`, all 6 nav items render at 768px alongside the logo — too wide. Fixed by:
+- `.logo { flex-shrink: 0 !important }` — prevents logo from compressing
+- Tablet breakpoint (768–991px): navbar padding `0.3rem 0.5rem`, nav gap `4px`, nav-link padding `0.8rem 0.35rem`
+
+**Audit finding: Footer gap on Home page (commit: 11e2f0a)**
+Home section didn't fill viewport at some device heights, leaving empty flex space above footer. Fixed by adding `min-height: 100vh` to `.home-section`.
+
+**Audit finding: About card text too large at 375px (commit: c0e919a)**
+`.quote-card-view p` and `.about-activity` inherited browser default `1rem = 16px`. Added mobile override: `font-size: var(--font-md)` (= 0.9rem at 375px).
+
+**Audit finding: Hamburger off-screen + footer not at bottom (commit: 3597f9b)**
+Root cause: `Scroll.css` had `min-width: 420px` on `.scroll-wrapper`, overflowing 375px viewport. The horizontal scrollbar ate ~15px of vertical height, lifting the footer. Fixed by:
+- `Scroll.css`: add `@media (max-width: 767px) { .scroll-wrapper { min-width: 0; width: 100%; } }`
+- `Home.js`: move `paddingLeft: 45` from inline to `.scroll-container` class with 15px mobile override
+- `style.css`: `.scroll-container` responsive padding; `flex-shrink: 0` on `.footer`
+
 ## Deviations from Plan
 
-None — plan executed exactly as written.
+No plan deviations. Audit discovered additional pre-existing issues (Scroll.css overflow, logo squish) fixed per D-02.
 
 ## Self-Check: PASSED
 
-- `src/style.css` modified with all three fix blocks appended.
-- `src/components/Projects/Robotics/Torus.js` updated: className added, height removed from inline.
-- `src/components/Projects/Robotics/ArtEngineering.js` updated: className added, grid props removed from inline.
-- Commit 1371d12 verified.
+- All three conditional fixes applied (Task 1)
+- Human audit approved (Task 2) — all routes pass at 375px and 768px
+- Additional audit-surfaced issues fixed and committed
