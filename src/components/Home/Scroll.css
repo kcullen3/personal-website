@@ -36,3 +36,10 @@
     /* moves exactly one full set of words */
   }
 }
+
+@media (max-width: 767px) {
+  .scroll-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+}

@@ -432,6 +432,17 @@ button:focus {
   bottom: 0 !important;
   padding-top: 10px !important;
   padding-bottom: 8px !important;
+  flex-shrink: 0;
+}
+
+.scroll-container {
+  padding-left: 45px;
+}
+
+@media (max-width: 767px) {
+  .scroll-container {
+    padding-left: 15px;
+  }
 }
 
 .footer-copywright {

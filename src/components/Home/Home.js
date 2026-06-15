@@ -21,7 +21,7 @@ function Home() {
                 It's me, <strong className="main-name"> Keigan Cullen</strong>
               </h1>
 
-              <div style={{ paddingTop: 33, paddingLeft: 45 }}>
+              <div style={{ paddingTop: 33 }} className="scroll-container">
                 <Scroll />
               </div>
             </Col>
