@@ -96,10 +96,6 @@ function NavBar() {
                   Robotics
                 </NavDropdown.Item>
 
-                <NavDropdown.Item as={Link} to="/projects/coupkooreview" onClick={() => updateExpanded(false)}>
-                  Coupkoo Review
-                </NavDropdown.Item>
-
                 <NavDropdown.Item as={Link} to="/projects/algotrade" onClick={() => updateExpanded(false)}>
                   Algorithmic Trading
                 </NavDropdown.Item>
@@ -120,6 +116,10 @@ function NavBar() {
               >
                 <NavDropdown.Item as={Link} to="/research/gravitationalwaves" onClick={() => updateExpanded(false)}>
                   Gravitational Waves
+                </NavDropdown.Item>
+
+                <NavDropdown.Item as={Link} to="/research/coupkooreview" onClick={() => updateExpanded(false)}>
+                  Coupkoo Review
                 </NavDropdown.Item>
 
               </NavDropdown>

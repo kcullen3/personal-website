@@ -44,6 +44,8 @@ function AboutCard() {
               <li className="about-activity">
                 {"💚 Reiki & energy healing practice"}
               </li>
+
+              {/*
               <li className="about-activity">
                 {"📱 Content creation on "}
                 <a
@@ -55,6 +57,7 @@ function AboutCard() {
                 </a>
                 {" — for the scientist & spiritual seeker alike"}
               </li>
+              */}
 
               <li className="about-activity" style={{ marginTop: "16px", marginBottom: "8px" }}>
                 <strong className="cyan">Beyond The Work</strong>
