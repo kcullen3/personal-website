@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/personal-website/static/css/main.cddf2509.css",
-    "main.js": "/personal-website/static/js/main.c95c8dfb.js",
+    "main.js": "/personal-website/static/js/main.dffa4285.js",
     "static/js/453.96892d07.chunk.js": "/personal-website/static/js/453.96892d07.chunk.js",
     "static/media/NBRRAction.mp4": "/personal-website/static/media/NBRRAction.8e609eaeece05e8c687b.mp4",
     "static/media/TorusVideo_web.mp4": "/personal-website/static/media/TorusVideo_web.c3793ad8f2c64e50d5ac.mp4",
@@ -70,11 +70,11 @@
     "static/media/Terminal.svg": "/personal-website/static/media/Terminal.25baf38429b4d3dea5e81cc6399ae0ab.svg",
     "static/media/Vercel.svg": "/personal-website/static/media/Vercel.7afd46cbfebe75e17fafa99a57ff1404.svg",
     "main.cddf2509.css.map": "/personal-website/static/css/main.cddf2509.css.map",
-    "main.c95c8dfb.js.map": "/personal-website/static/js/main.c95c8dfb.js.map",
+    "main.dffa4285.js.map": "/personal-website/static/js/main.dffa4285.js.map",
     "453.96892d07.chunk.js.map": "/personal-website/static/js/453.96892d07.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cddf2509.css",
-    "static/js/main.c95c8dfb.js"
+    "static/js/main.dffa4285.js"
   ]
 }
