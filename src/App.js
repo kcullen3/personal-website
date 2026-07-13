@@ -13,7 +13,7 @@ import BackScratch from "./components/Projects/BackScratch/BackScratch";
 import GravitationalWaves from "./components/Research/GravitationalWaves/GravitationalWaves";
 import AlgoTrade from "./components/Projects/AlgoTrade/AlgoTrade";
 import Robotics from "./components/Projects/Robotics/Robotics";
-import CoupkooReview from "./components/Projects/CoupkooReview/CoupkooReview";
+import CoupkooReview from "./components/Research/CoupkooReview/CoupkooReview";
 import {
   BrowserRouter as Router,
   Route,
@@ -33,7 +33,7 @@ const PAGE_TITLES = {
   "/projects/backscratch": "Keigan Cullen - BackScratch",
   "/projects/algotrade": "Keigan Cullen - AlgoTrade",
   "/projects/robotics": "Keigan Cullen - Robotics",
-  "/projects/coupkooreview": "Keigan Cullen - Coupkoo Review",
+  "/research/coupkooreview": "Keigan Cullen - Coupkoo Review",
   "/research": "Keigan Cullen - Research",
   "/research/gravitationalwaves": "Keigan Cullen - Gravitational Waves",
   "/services": "Keigan Cullen - Services",
@@ -74,7 +74,7 @@ function App() {
             <Route path="/projects/backscratch" element={<BackScratch />} />
             <Route path="/projects/algotrade" element={<AlgoTrade />} />
             <Route path="/projects/robotics" element={<Robotics />} />
-            <Route path="/projects/coupkooreview" element={<CoupkooReview />} />
+            <Route path="/research/coupkooreview" element={<CoupkooReview />} />
             <Route path="/research" element={<Research />} />
             <Route path="/research/gravitationalwaves" element={<GravitationalWaves />} />
             <Route path="/services" element={<Services />} />
