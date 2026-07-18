@@ -66,9 +66,10 @@ Plan: 1 of 2
 | # | Description | Date | Commit | Directory |
 |---|-------------|------|--------|-----------|
 | 260718-nlt | Add My Psychic Edge and Parapsychology Research tabs to Research navbar | 2026-07-18 | 05104ea | [260718-nlt-add-my-psychic-edge-and-parapsychology-r](./quick/260718-nlt-add-my-psychic-edge-and-parapsychology-r/) |
+| 260718-nzu | Build out Projects index page (BackScratch, Robotics, AlgoTrade cards) | 2026-07-18 | 314969e | [260718-nzu-build-out-src-components-projects-projec](./quick/260718-nzu-build-out-src-components-projects-projec/) |
 
 ## Session Continuity
 
 **Last updated:** 2026-07-18
-**Last action:** Completed quick task 260718-nlt: Add My Psychic Edge and Parapsychology Research tabs to Research navbar
+**Last action:** Completed quick task 260718-nzu: Build out Projects index page
 **Next action:** `/gsd-plan-phase 2`
