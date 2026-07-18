@@ -65,7 +65,7 @@ Plan: 1 of 2
 
 | # | Description | Date | Commit | Directory |
 |---|-------------|------|--------|-----------|
-| 260718-nlt | Add My Psychic Edge and Parapsychology Research tabs to Research navbar | 2026-07-18 | (pending) | [260718-nlt-add-my-psychic-edge-and-parapsychology-r](./quick/260718-nlt-add-my-psychic-edge-and-parapsychology-r/) |
+| 260718-nlt | Add My Psychic Edge and Parapsychology Research tabs to Research navbar | 2026-07-18 | 05104ea | [260718-nlt-add-my-psychic-edge-and-parapsychology-r](./quick/260718-nlt-add-my-psychic-edge-and-parapsychology-r/) |
 
 ## Session Continuity
 
