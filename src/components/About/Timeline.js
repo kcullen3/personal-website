@@ -27,9 +27,9 @@ const timelineData = [
         date: "2023 – 2025",
         icon: "🤖",
         bullets: [
-            "Third hire at a nonprofit building a technology and research ecosystem",
+            "Third hire at a nonprofit building tech, research, and community programs",
             "Led AI development, rapid prototyping, and complex system design",
-            "Managed both interns and projects, wrote grants, and ran K-12 education programs",
+            "Managed interns and projects, wrote grants, and ran K-12 education programs",
         ],
     },
     {
@@ -39,7 +39,7 @@ const timelineData = [
         bullets: [
             "B.S. Physics, Cum Laude — Minor in Mathematics",
             "Researched gravitational waves using high-performance scientific computing",
-            "Developed neural network framework for gravitational wave modeling",
+            "Developed a neural network framework for gravitational wave modeling",
             "Teaching Assistant for introductory physics",
         ],
     },
@@ -49,7 +49,7 @@ const timelineData = [
         icon: "🍳",
         bullets: [
             "Years of experience across front and back of house",
-            "Built unshakeable work ethic, people skills, and adaptability",
+            "Built a strong work ethic, people skills, and adaptability",
             "Learned the value of craft and community",
         ],
     },

@@ -125,7 +125,7 @@ function Splinter() {
                 </Col>
                 <Col md={6}>
                     <p style={{ ...bodyStyle, marginBottom: "16px" }}>
-                        "Splinter" was one of my best friend's at NBRR, he is an ABB brand 6-axis robotic arm capable of printing
+                        "Splinter" was one of my best friends at NBRR, he is an ABB brand 6-axis robotic arm capable of printing
                         with both thermoplastic pellets and ceramic clay — two completely different materials, two completely different
                         electrical systems, one machine. Each toolhead required its own wiring architecture spanning 120V AC, 24V DC,
                         and low-voltage signal lines across three custom connectors, all coordinated through a layered control stack:
@@ -141,12 +141,12 @@ function Splinter() {
                         {" "}I wrote from scratch.
                     </p>
                     <p style={{ ...bodyStyle, marginBottom: 0 }}>The real challenge wasn't any single system —
-                        it was making all of them coexist without burning anything down. That meant designing fault-tolerant
-                        switching logic to prevent one toolhead from accidentally frying the other, writing two entirely
-                        separate motor control scripts for two motors that couldn't be more different, and documenting
-                        everything clearly enough that someone else could operate it safely. Splinter is the kind of project that teaches
-                        you what you're actually made of as an engineer — because there is no template and the consequences of
-                        getting it wrong are immediate, expensive, and sometimes loud.
+                        it was making all of them coexist without burning anything down. I had to design
+                        fault-tolerant switching logic so one toolhead couldn't accidentally fry the other,
+                        write two completely separate motor control scripts for two motors that had nothing
+                        in common, and document all of it clearly enough that someone else could run it
+                        safely. There's no template for a project like Splinter. Get something wrong and
+                        you find out immediately, and it's usually expensive, and occasionally loud.
                     </p>
                 </Col>
             </Row>

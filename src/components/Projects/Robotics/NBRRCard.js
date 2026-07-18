@@ -69,25 +69,22 @@ function NBRRCard() {
                         >
                             New Bedford Research & Robotics
                         </a>
-                        {" "}is a non-profit organization dedicated to building community through robotics,
-                        research, and technology. By providing access to a professional lab, hosting educational
-                        programs, and supporting startups and R&D projects, NBRR is quietly building something
-                        rare — a place where curiosity and capability meet. I joined as an intern in the summer
-                        of 2023 and quickly became one of the core members of the team.
+                        {" "}is a non-profit that builds community through robotics, research, and
+                        technology. It runs a professional lab, hosts educational programs, and supports
+                        startups and R&D projects. I joined as an intern in the summer of 2023 and quickly
+                        became one of the core members of the team.
                     </p>
                     <p style={{ ...bodyStyle, marginBottom: "20px" }}>
-                        As one of the organization's first hires, I had the privilege of helping build the
-                        infrastructure the non-profit needed from the ground up. The environment demanded
-                        versatility — and I delivered: wiring and assembly, CAD design, research analysis,
-                        project management, AI development, K-12 education, grant writing, and startup
-                        facilitation. No two days looked the same, and I wouldn't have had it any other way.
+                        As one of the organization's first hires, I helped build the infrastructure the
+                        non-profit needed from the ground up. The job asked for a lot of range: wiring and
+                        assembly, CAD design, research analysis, project management, AI development, K-12
+                        education, grant writing, and startup facilitation. No two days looked the same.
                     </p>
                     <p style={{ ...bodyStyle, marginBottom: "0" }}>
-                        Fast-paced, hands-on, and deeply collaborative, NBRR gave me a rare opportunity to
-                        grow across disciplines simultaneously — sharpening my technical edge while building
-                        my ability to lead, teach, and create from scratch. I left in April 2025 to pursue my
-                        own ventures, but the experience fundamentally shaped who I am as an engineer,
-                        educator, and builder.
+                        NBRR moved fast and stayed hands-on, and it gave me room to grow across a lot of
+                        disciplines at once, sharpening my technical work while building my ability to lead,
+                        teach, and build things from scratch. I left in April 2025 to pursue my own ventures,
+                        but the experience changed how I think as an engineer, educator, and builder.
                     </p>
                 </Col>
 

@@ -4,8 +4,8 @@ import landing from "../../../Assets/BackScratch/landing.png";
 import { BsBoxArrowUpRight } from "react-icons/bs";
 
 const CONTENT = {
-    subtitle: "Made by the little people, for the little people.",
-    date: "2024 – Present",
+    subtitle: "I scratch yours, you scratch mine.",
+    date: "2026 – Present",
 };
 
 const bodyStyle = {
@@ -53,23 +53,22 @@ function BackScratchCard() {
                         >
                             BackScratch<BsBoxArrowUpRight size={9} />
                         </a>
-                        {" "}is a community-first platform connecting small businesses and individuals for jobs, services, and bartering
-                        — built for local economies, not the algorithm. Think of an old-school neighborhood bulletin board,
-                        but with a social layer and a built-in trading system. BackScratch exists for the mom-and-pop shops, the side hustlers,
+                        {" "}is a community-first platform connecting small businesses and individuals for jobs, services, and bartering,
+                        built for local economies instead of an algorithm. Think of an old-school neighborhood bulletin board,
+                        but with a social layer and a built-in trading system. It's for the mom-and-pop shops, the side hustlers,
                         the tradespeople, and the neighbors that mainstream platforms overlook. Using it is simple:
                         <em className="cyan"> Post what you need. Post what you offer. Make a deal. Build something real with the people around you.
                         </em>
                     </p>
                     <p style={{ ...bodyStyle, marginBottom: "12px" }}>
-                        Small businesses and freelancers don't need another platform with enterprise pricing and a learning curve
-                        — they need a way to work with the people already around them. Bartering isn't just a solution for when money is tight;
-                        it's a more resilient model. When markets fluctuate and cash flow gets unpredictable, the ability to trade skills, goods,
-                        and services creates stability that money alone can't. BackScratch is also for the people on the other side of that equation
-                        — anyone who'd rather hire a local tradesperson, find a neighborhood service, or support a small shop can do so, investing in
-                        their own community. Beyond the economics, there's something that happens when a neighborhood bakery trades
-                        with a local graphic designer, or a freelance photographer helps a massage therapist in exchange for sessions — community forms.
-                        BackScratch is the infrastructure for that. Built by a systems engineer and startup consultant who believes the right tools,
-                        in the right hands, change how a local economy breathes.
+                        Small businesses and freelancers don't need another platform with enterprise pricing and a learning curve.
+                        They need a way to work with the people already around them. Bartering matters even when money isn't tight:
+                        trading skills, goods, and services gives a local economy some give when cash flow gets unpredictable.
+                        BackScratch also works for the other side of that trade, anyone who'd rather hire a local tradesperson,
+                        find a neighborhood service, or support a small shop instead of a chain. And there's something that happens
+                        when a neighborhood bakery trades with a local graphic designer, or a freelance photographer swaps sessions with a
+                        massage therapist, that's just community forming the old way. Built by a systems engineer and startup consultant
+                        who thinks local economies work better when the tools get out of the way.
                     </p>
                 </Col>
                 <Col md={7}>

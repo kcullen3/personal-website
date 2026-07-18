@@ -94,16 +94,17 @@ function NeuralSHO() {
                 </Col>
                 <Col md={4}>
                     <p style={bodyStyle}>
-                        Another exciting project I worked on was a Neural ODE framework using the Julia programming language that learns the governing dynamics
-                        of a physical system from trajectory data alone — no equations handed to it, no physics assumed.
-                        The simple harmonic oscillator was the chosen testbed deliberately: it is one of the most universal
-                        models in all of science, appearing in everything from quantum mechanics and electrical circuits to
-                        biological rhythms and economic cycles. If a framework can learn it from scratch, it can learn anything
-                        shaped like it! A neural network replaces the analytic force term in the equations of motion and is
-                        trained to recover the correct behavior purely from observation — unifying data-driven and
-                        physics-based modeling into a single architecture. This framework served as the foundation for a
-                        subsequent neural gravitational wave model for my research group. Built on
-                        Julia's SciML ecosystem and designed for HPC execution. (
+                        Another project I worked on was a Neural ODE framework using the Julia programming language
+                        that learns the governing dynamics of a physical system from trajectory data alone,
+                        no equations handed to it, no physics assumed. I picked the simple harmonic oscillator
+                        as the testbed on purpose. It shows up everywhere, quantum mechanics, electrical circuits,
+                        biological rhythms, economic cycles. If a framework can learn it from scratch, there's a
+                        good case it can learn anything shaped like it. A neural network replaces the analytic
+                        force term in the equations of motion and gets trained to recover the correct behavior
+                        purely from observation, so the data-driven and physics-based parts of the model work
+                        together instead of separately. This framework became the foundation for a neural
+                        gravitational wave model I built next for my research group. Built on Julia's SciML
+                        ecosystem and designed for HPC execution. (
                         <a
                             href="https://github.com/kcullen3/neural-ode-harmonic-oscillator"
                             target="_blank"

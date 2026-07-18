@@ -9,17 +9,18 @@ function AboutCard() {
         <Card.Body>
           <blockquote className="blockquote mb-0">
             <p style={{ textAlign: "justify" }}>
-              Keigan lives at the edge of what science can currently explain —
-              and he wouldn't have it any other way. A physicist by training, engineer by trade,
-              healer by calling and entrepreneur for fun, he has spent his career building things that matter:
-              from gravitational wave models and robotics systems to community platforms
-              and independent parapsychology research.
+              Keigan works where most people stop looking. He's got a physics
+              degree, he builds robots, he does energy healing sessions, and
+              he starts companies on the side. Gravitational wave models,
+              robotics systems, community platforms, parapsychology research —
+              he's built all of it, often at the same time.
             </p>
             <p style={{ textAlign: "justify" }}>
-              Whether he's writing code, facilitating a healing session,
-              wiring a new component or diving into consciousness research,
-              the throughline is always the same — <em className="white">a relentless curiosity
-                about what lies just beyond the edge of what we think is possible.</em>
+              Doesn't matter if he's writing code, running a healing session,
+              wiring a new component, or reading up on consciousness research.
+              <em className="white"> The throughline is always the same: a relentless
+              curiosity about what lies just beyond the edge of what we think
+              is possible.</em>
             </p>
 
             <ul>
@@ -36,10 +37,13 @@ function AboutCard() {
                 >
                   BackScratch <BsBoxArrowUpRight size={9} />
                 </a>
-                {" — a community platform for small businesses"}
+                {" — a barter platform for small businesses"}
               </li>
               <li className="about-activity">
                 {"📈 Developing algorithmic trading strategies"}
+              </li>
+              <li className="about-activity">
+                {"🔎 Looking for work in engineering, research and finance"}
               </li>
               <li className="about-activity">
                 {"💚 Reiki & energy healing practice"}

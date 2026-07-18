@@ -15,20 +15,23 @@ const HIGHLIGHTS = [
 
 const CONTENT = {
     subtitle: "Creative Vision → Technical Execution → Business Reality",
-    para1: `Some people understand technology. Others understand people. 
-    Rarely do you find someone who can sit across from an artist mid-residency, 
-    understand exactly what they're trying to create, and then build the technical 
-    bridge to get them there — while also helping them understand the economics of making it last.`,
+    para1: `Understanding technology and understanding people usually live in
+    different people. I've spent a lot of my career trying to be both at once —
+    sitting across from an artist mid-residency, figuring out what they're
+    actually trying to make, building the technical piece that gets them there,
+    and then helping them think through what it costs to keep doing it.`,
     para2:
-        `That's more of the work I did at NBRR. Embedded in a live ecosystem of artists, 
-    engineers and early-stage startups, I became the connective tissue between 
-    ambitious ideas and functional outcomes. I worked directly alongside artists 
-    like Fallon Navarro and Lilach Porges — integrating robotics into their residencies, 
-    solving technical challenges in real time, and helping them think through the financial 
-    architecture of their practice. For startups, I served as a strategic and technical collaborator,
-     identifying how emerging robotics technology could be applied in ways their teams hadn't yet imagined.`,
-    para3: `What I learned is that the gap between a great idea and a sustainable one is almost
-     always a mix of planning, execution and clarity — and that's exactly where I operate best.`,
+        `That's most of what I did at NBRR. I was embedded in a live mix of artists,
+    engineers, and early-stage startups, and I ended up being the person who
+    translated between ambitious ideas and things that actually worked. I worked
+    directly with artists like Fallon Navarro and Lilach Porges, integrating robotics
+    into their residencies, solving problems as they came up, and helping them think
+    through the money side of their practice. With startups, I worked as a technical
+    collaborator, showing teams ways robotics could solve problems they hadn't
+    thought to apply it to yet.`,
+    para3: `What I learned is that the gap between a good idea and one that survives
+    contact with reality is mostly planning, execution, and being honest about what
+    something actually takes. That's the part I'm good at.`,
 };
 
 const bodyStyle = {
@@ -67,17 +70,18 @@ function CommunityCollaboration() {
                     </h4>
                     <p style={{ ...bodyStyle, marginBottom: "16px" }}>{CONTENT.para1}</p>
                     <p style={{ ...bodyStyle, marginBottom: "16px" }}>
-                        That's more of the work I did at NBRR. Embedded in a live ecosystem of artists,
-                        engineers and early-stage startups, I became the connective tissue between
-                        ambitious ideas and functional outcomes. I worked directly alongside artists
-                        like{" "}
+                        That's most of the work I did at NBRR. I was embedded in a live mix of artists,
+                        engineers, and early-stage startups, and I ended up being the person who
+                        translated between ambitious ideas and things that actually worked. I worked
+                        directly alongside artists like{" "}
                         <a href="https://www.fallonnavarro.com/new-bedford-research--robotics.html" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent1_dull)", textDecoration: "underline" }}>Fallon Navarro</a>
                         {" "}and{" "}
                         <a href="https://www.procode-dress.com/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent1_dull)", textDecoration: "underline" }}>Lilach Porges</a>
-                        {" "}— integrating robotics into their residencies,
-                        solving technical challenges in real time, and helping them think through the financial
-                        architecture of their practice. For startups, I served as a strategic and technical collaborator,
-                        identifying how emerging robotics technology could be applied in ways their teams hadn't yet imagined.
+                        {" "}integrating robotics into their residencies,
+                        solving technical problems as they came up, and helping them think through
+                        the money side of their practice. With startups, I worked as a technical
+                        collaborator, showing teams ways robotics could solve problems they hadn't
+                        thought to apply it to yet.
                     </p>
                     <p style={{ ...bodyStyle, marginBottom: 0 }}>{CONTENT.para3}</p>
                 </Col>

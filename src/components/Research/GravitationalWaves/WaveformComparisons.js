@@ -96,13 +96,13 @@ function WaveformComparisons() {
                 <Col md={4}>
                     <p style={bodyStyle}>
                         During my computational physics research position at UMass Dartmouth,
-                        I developed a high-performance scientific computing pipeline to rigorously compare
+                        I developed a high-performance scientific computing pipeline to compare
                         gravitational wave models across thousands of simulated black hole mergers.
-                        The framework was designed to be model-agnostic — applied here to the EMRI surrogate
+                        The framework was designed to be model-agnostic, applied here to the EMRI surrogate
                         and EOBNRv2HM approximant, but adaptable to any two waveform models. The work involved
                         waveform analysis, numerical error quantification, and tracking down a floating-point
                         precision bug in a widely used surrogate model that was producing non-physical artifacts
-                        in computed mismatches — a finding communicated directly to the development team. Built on
+                        in computed mismatches. I reported the bug directly to the development team. Built on
                         Python, LALSuite, and the LIGO Scientific Collaboration's open-source toolchain, and run
                         on a university supercomputer. (
                         <a
