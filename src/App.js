@@ -14,6 +14,8 @@ import GravitationalWaves from "./components/Research/GravitationalWaves/Gravita
 import AlgoTrade from "./components/Projects/AlgoTrade/AlgoTrade";
 import Robotics from "./components/Projects/Robotics/Robotics";
 import CoupkooReview from "./components/Research/CoupkooReview/CoupkooReview";
+import MyPsychicEdge from "./components/Research/MyPsychicEdge/MyPsychicEdge";
+import ParapsychologyResearch from "./components/Research/ParapsychologyResearch/ParapsychologyResearch";
 import {
   BrowserRouter as Router,
   Route,
@@ -36,6 +38,8 @@ const PAGE_TITLES = {
   "/research/coupkooreview": "Keigan Cullen - Coupkoo Review",
   "/research": "Keigan Cullen - Research",
   "/research/gravitationalwaves": "Keigan Cullen - Gravitational Waves",
+  "/research/mypsychicedge": "Keigan Cullen - My Psychic Edge",
+  "/research/parapsychologyresearch": "Keigan Cullen - Parapsychology Research",
   "/services": "Keigan Cullen - Services",
   "/contact": "Keigan Cullen - Contact",
 };
@@ -77,6 +81,8 @@ function App() {
             <Route path="/research/coupkooreview" element={<CoupkooReview />} />
             <Route path="/research" element={<Research />} />
             <Route path="/research/gravitationalwaves" element={<GravitationalWaves />} />
+            <Route path="/research/mypsychicedge" element={<MyPsychicEdge />} />
+            <Route path="/research/parapsychologyresearch" element={<ParapsychologyResearch />} />
             <Route path="/services" element={<Services />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<Navigate to="/" />} />

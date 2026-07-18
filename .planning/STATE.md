@@ -61,8 +61,14 @@ Plan: 1 of 2
 
 (none)
 
+### Quick Tasks Completed
+
+| # | Description | Date | Commit | Directory |
+|---|-------------|------|--------|-----------|
+| 260718-nlt | Add My Psychic Edge and Parapsychology Research tabs to Research navbar | 2026-07-18 | (pending) | [260718-nlt-add-my-psychic-edge-and-parapsychology-r](./quick/260718-nlt-add-my-psychic-edge-and-parapsychology-r/) |
+
 ## Session Continuity
 
-**Last updated:** 2026-06-13
-**Last action:** Roadmap created — Phase 1 ready to plan
-**Next action:** `/gsd-plan-phase 1`
+**Last updated:** 2026-07-18
+**Last action:** Completed quick task 260718-nlt: Add My Psychic Edge and Parapsychology Research tabs to Research navbar
+**Next action:** `/gsd-plan-phase 2`
