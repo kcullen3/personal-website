@@ -118,16 +118,16 @@ function NavBar() {
                   Gravitational Waves
                 </NavDropdown.Item>
 
-                <NavDropdown.Item as={Link} to="/research/coupkooreview" onClick={() => updateExpanded(false)}>
-                  Coupkoo Review
-                </NavDropdown.Item>
-
                 <NavDropdown.Item as={Link} to="/research/mypsychicedge" onClick={() => updateExpanded(false)}>
                   My Psychic Edge
                 </NavDropdown.Item>
 
                 <NavDropdown.Item as={Link} to="/research/parapsychologyresearch" onClick={() => updateExpanded(false)}>
                   Parapsychology Research
+                </NavDropdown.Item>
+
+                <NavDropdown.Item as={Link} to="/research/coupkooreview" onClick={() => updateExpanded(false)}>
+                  Coupkoo Review
                 </NavDropdown.Item>
 
               </NavDropdown>
