@@ -1,5 +1,5 @@
 /* Root application component — sets up routing, preloader, and persistent layout (Navbar, Footer) */
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, lazy, Suspense } from "react";
 import Preloader from "../src/components/Pre";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home/Home";
@@ -10,9 +10,7 @@ import Services from "./components/Services/Services";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer";
 import BackScratch from "./components/Projects/BackScratch/BackScratch";
-import GravitationalWaves from "./components/Research/GravitationalWaves/GravitationalWaves";
 import AlgoTrade from "./components/Projects/AlgoTrade/AlgoTrade";
-import Robotics from "./components/Projects/Robotics/Robotics";
 import CoupkooReview from "./components/Research/CoupkooReview/CoupkooReview";
 import MyPsychicEdge from "./components/Research/MyPsychicEdge/MyPsychicEdge";
 import ParapsychologyResearch from "./components/Research/ParapsychologyResearch/ParapsychologyResearch";
@@ -27,6 +25,27 @@ import ScrollToTop from "./components/ScrollToTop";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./style.css";
 import "./App.css";
+
+// Split out routes that pull in react-pdf (pdfjs-dist), kept out of the initial bundle
+const Robotics = lazy(() => import("./components/Projects/Robotics/Robotics"));
+const GravitationalWaves = lazy(() => import("./components/Research/GravitationalWaves/GravitationalWaves"));
+
+function RouteFallback() {
+  return (
+    <div
+      style={{
+        minHeight: "60vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        color: "#9B72CF",
+        fontSize: "1.1rem",
+      }}
+    >
+      Loading...
+    </div>
+  );
+}
 
 const PAGE_TITLES = {
   "/": "Keigan Cullen",
@@ -71,22 +90,24 @@ function App() {
         <Navbar />
         <ScrollToTop />
         <div style={{ flex: 1 }}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/projects/backscratch" element={<BackScratch />} />
-            <Route path="/projects/algotrade" element={<AlgoTrade />} />
-            <Route path="/projects/robotics" element={<Robotics />} />
-            <Route path="/research/coupkooreview" element={<CoupkooReview />} />
-            <Route path="/research" element={<Research />} />
-            <Route path="/research/gravitationalwaves" element={<GravitationalWaves />} />
-            <Route path="/research/mypsychicedge" element={<MyPsychicEdge />} />
-            <Route path="/research/parapsychologyresearch" element={<ParapsychologyResearch />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<Navigate to="/" />} />
-          </Routes>
+          <Suspense fallback={<RouteFallback />}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/projects/backscratch" element={<BackScratch />} />
+              <Route path="/projects/algotrade" element={<AlgoTrade />} />
+              <Route path="/projects/robotics" element={<Robotics />} />
+              <Route path="/research/coupkooreview" element={<CoupkooReview />} />
+              <Route path="/research" element={<Research />} />
+              <Route path="/research/gravitationalwaves" element={<GravitationalWaves />} />
+              <Route path="/research/mypsychicedge" element={<MyPsychicEdge />} />
+              <Route path="/research/parapsychologyresearch" element={<ParapsychologyResearch />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="*" element={<Navigate to="/" />} />
+            </Routes>
+          </Suspense>
         </div>
         <Footer />
       </div>
