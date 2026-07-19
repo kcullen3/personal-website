@@ -2,11 +2,7 @@ import React from "react";
 import { Row, Col } from "react-bootstrap";
 import landing from "../../../Assets/BackScratch/landing.png";
 import { BsBoxArrowUpRight } from "react-icons/bs";
-
-const CONTENT = {
-    subtitle: "I scratch yours, you scratch mine.",
-    date: "2026 – Present",
-};
+import { CONTENT } from "../../../data/backScratchCard";
 
 const bodyStyle = {
     color: "var(--text)",

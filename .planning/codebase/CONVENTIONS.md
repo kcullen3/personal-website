@@ -8,6 +8,7 @@
 - Component files: PascalCase matching the component name, e.g. `Home.js`, `Contact.js`, `NBRRCard.js`, `ScrollToTop.js`.
 - Component folders group a feature's page + subcomponents, e.g. `src/components/Projects/Robotics/{Robotics.js, NBRRCard.js, Splinter.js, ArtEngineering.js, Slideshow.js}`.
 - Assets live under `src/Assets/<Category>/` (`Robotics`, `TechIcons`, `Services`, `BackScratch`, `Research`) mirroring the component tree that consumes them.
+- Data files live flat under `src/data/<name>.js`, camelCase — named after the consuming component where 1:1 (`nbrrCard.js` for `NBRRCard.js`) or after the content topic when shared/page-level (`social.js`, `projects.js`, `contact.js`). Named exports only.
 - CSS files are sparse and named after their scope: `src/style.css` (global, 1088 lines — the vast majority of all styling), `src/App.css` (7 lines), `src/index.css` (8 lines), `src/components/Home/Scroll.css` (component-scoped, 44 lines).
 
 **Functions/Components:**
@@ -15,7 +16,7 @@
 - Always `export default ComponentName;` at the bottom of the file. No named exports observed for components.
 
 **Variables/Constants:**
-- Module-level constant config objects/arrays are `UPPER_SNAKE_CASE`: `SUBJECTS`, `MAX_CHARS`, `HIGHLIGHTS`, `CONTENT`, `PAGE_TITLES` (see `src/components/Contact/Contact.js`, `src/components/Projects/Robotics/NBRRCard.js`, `src/App.js`).
+- Module-level constant config objects/arrays are `UPPER_SNAKE_CASE`: `SUBJECTS`, `MAX_CHARS`, `HIGHLIGHTS`, `CONTENT`, `PAGE_TITLES`. `MAX_CHARS` and `PAGE_TITLES` stay module-local (`src/components/Contact/Contact.js`, `src/App.js` respectively) since they're config, not content; `SUBJECTS`, `HIGHLIGHTS`, `CONTENT`-style content constants now live in `src/data/*.js` (e.g. `SUBJECTS` in `src/data/contact.js`, `HIGHLIGHTS`/`CONTENT` in `src/data/nbrrCard.js`) and are imported into the component rather than declared there.
 - Inline style objects reused across a component are `camelCase` consts placed above the component function: `inputStyle`, `selectStyle`, `bodyStyle`, `collageStyle`.
 - Local component state/vars are `camelCase` (`form`, `status`, `load`).
 
@@ -43,7 +44,8 @@
 1. `react` / third-party libraries (`react-bootstrap`, `react-router-dom`, `@emailjs/browser`)
 2. Local component imports (relative paths, e.g. `../Particle`, `./Scroll`)
 3. Asset imports (images/videos/PDFs), typically last, e.g. `import homeLogo from "../../Assets/logomain.png";`
-4. Global CSS imports (only in `App.js`, at the very end): `bootstrap/dist/css/bootstrap.min.css`, `./style.css`, `./App.css`
+4. Data imports (from `src/data/*.js`), grouped with or immediately after local component/asset imports, e.g. `import { HIGHLIGHTS, CONTENT } from "../../../data/nbrrCard";` in `NBRRCard.js`
+5. Global CSS imports (only in `App.js`, at the very end): `bootstrap/dist/css/bootstrap.min.css`, `./style.css`, `./App.css`
 
 **Path Aliases:**
 - None. All imports use relative paths (`../../../Assets/...`). No `jsconfig.json` / `tsconfig.json` path aliasing.
@@ -64,13 +66,13 @@
 
 ## Function Design
 
-- Components are small-to-medium single-purpose functions; larger "page" components (e.g. `NBRRCard.js`) inline substantial JSX/copy rather than splitting into subcomponents, but do extract config data (highlights, body copy) into top-of-file constants.
+- Components are small-to-medium single-purpose functions; larger "page" components (e.g. `NBRRCard.js`) inline substantial JSX rather than splitting into subcomponents, but source their config data (highlights, labels, dates) from an imported `src/data/*.js` module instead of a top-of-file constant. Body paragraphs that embed a live in-sentence link are the one exception left as inline JSX/copy (see `ARCHITECTURE.md`'s Key Abstractions for the full list).
 - Event handlers are defined inline inside the component as `const handleX = (e) => {...}` closures (see `handleChange`, `handleSubmit` in `Contact.js`).
 - `async/await` with `try/catch` is the pattern for async operations (EmailJS send in `Contact.js`); errors are caught and reflected into component state (`setStatus("error")`) rather than thrown further.
 
 ## Module Design
 
-- Every component file has exactly one default export; no barrel (`index.js`) files re-exporting multiple components were found.
+- Every component file has exactly one default export; no barrel (`index.js`) files re-exporting multiple components were found. Data files under `src/data/` are the one exception — they use named exports only (no default export), since a file may export more than one const (e.g. `splinter.js` exports `SLIDES`, `HIGHLIGHTS`, and `CONTENT`).
 - Environment variables are read at module scope via `process.env.REACT_APP_*` (CRA convention), e.g. `EMAILJS_SERVICE_ID` in `Contact.js`.
 - Routing table (`PAGE_TITLES` in `App.js`) and route definitions are centralized in `src/App.js`; new pages should be added there as both a `<Route>` and a `PAGE_TITLES` entry.
 

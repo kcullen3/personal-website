@@ -4,18 +4,9 @@ import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import presentationFile from "../../../Assets/Research/WaveformComparisons.pdf";
 import { BsBoxArrowUpRight } from "react-icons/bs";
+import { HIGHLIGHTS } from "../../../data/waveformComparisons";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
-
-const HIGHLIGHTS = [
-    "Python",
-    "High Performance Computing",
-    "Scientific Rigor",
-    "Model Validation",
-    "Cross-Team Communication",
-    "Quantitative Error Analysis",
-    "Open-Source Integration",
-];
 
 const bodyStyle = {
     color: "var(--text)",

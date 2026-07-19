@@ -6,12 +6,7 @@ import Timeline from "./Timeline";
 import Techstack from "./Techstack";
 import Toolstack from "./Toolstack";
 import profilepic from "../../Assets/about.png";
-import {
-  AiFillGithub,
-  AiOutlineTwitter,
-  AiFillInstagram,
-} from "react-icons/ai";
-import { FaLinkedinIn } from "react-icons/fa";
+import { socialLinks } from "../../data/social";
 
 function About() {
   return (
@@ -89,46 +84,18 @@ function About() {
               <span className="cyan">Check me out </span> here too!
             </p>
             <ul className="home-about-social-links">
-              <li className="social-icons">
-                <a
-                  href="https://github.com/kcullen3"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour home-social-icons"
-                >
-                  <AiFillGithub />
-                </a>
-              </li>
-              <li className="social-icons">
-                <a
-                  href="https://x.com/KeiganCullen"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour home-social-icons"
-                >
-                  <AiOutlineTwitter />
-                </a>
-              </li>
-              <li className="social-icons">
-                <a
-                  href="https://www.linkedin.com/in/keigan-cullen-000551171/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour home-social-icons"
-                >
-                  <FaLinkedinIn />
-                </a>
-              </li>
-              <li className="social-icons">
-                <a
-                  href="https://www.instagram.com/keigancullen"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour home-social-icons"
-                >
-                  <AiFillInstagram />
-                </a>
-              </li>
+              {socialLinks.map(({ icon: Icon, href }, i) => (
+                <li className="social-icons" key={i}>
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="icon-colour home-social-icons"
+                  >
+                    <Icon />
+                  </a>
+                </li>
+              ))}
             </ul >
           </Col >
         </Row >

@@ -6,20 +6,7 @@ import event1 from "../../../Assets/Robotics/event1.png";
 import event2 from "../../../Assets/Robotics/event2.png";
 import eventTimelapse from "../../../Assets/Robotics/eventtimelapse.mp4";
 import nbrrBooth from "../../../Assets/Robotics/nbrrbooth.png";
-
-const HIGHLIGHTS = [
-    "3D Design & Rapid Prototyping",
-    "AI Development & Implementation",
-    "K-12 STEM Education & Intern Mentorship",
-    "Grant Writing & Community Engagement",
-    "Startup Facilitation & Project Management",
-    "Robotics Engineering & Assembly",
-];
-
-const CONTENT = {
-    subtitle: "Intern → Research Assistant → Research Engineer & Educator",
-    date: "Jul 2023 – Apr 2025",
-};
+import { HIGHLIGHTS, CONTENT } from "../../../data/nbrrCard";
 
 const bodyStyle = {
     color: "var(--text)",

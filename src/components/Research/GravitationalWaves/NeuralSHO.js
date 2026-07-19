@@ -4,17 +4,9 @@ import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import presentationFile from "../../../Assets/Research/NeuralSHO.pdf";
 import { BsBoxArrowUpRight } from "react-icons/bs";
+import { HIGHLIGHTS } from "../../../data/neuralSHO";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
-
-const HIGHLIGHTS = [
-    "Scientific Machine Learning",
-    "Neural ODEs",
-    "Physics-Informed Neural Networks",
-    "Framework Design",
-    "High Performance Computing",
-    "Cross-Domain Applicability",
-];
 
 const bodyStyle = {
     color: "var(--text)",

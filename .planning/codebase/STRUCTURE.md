@@ -24,13 +24,31 @@ personal-website/
 │   │   │   └── *.png, *.jpg/.JPG/.JPEG, *.mp4, *.pdf
 │   │   ├── Services/           # one image per service card (art.jpg, consulting.jpg, healing.jpg, tech.jpg, website.jpg)
 │   │   └── TechIcons/          # one SVG/PNG per skill/tool badge shown in About page (Techstack.js, Toolstack.js)
+│   ├── data/                  # Content data layer — plain JS modules, no rendering logic (added in the data-layer refactor)
+│   │   ├── bio.js               # About page bio paragraphs, "currently working on"/"beyond the work" lists, quote
+│   │   ├── timeline.js          # About page career/education timeline entries
+│   │   ├── techstack.js         # About page language/framework icon grid (icon imports + labels)
+│   │   ├── toolstack.js         # About page tools icon grid (icon imports + labels)
+│   │   ├── social.js            # shared social-link list (icon + href) — used by both Footer.js and About.js
+│   │   ├── scroll.js            # Home page rotating role-title words
+│   │   ├── projects.js          # Projects index page card list
+│   │   ├── research.js          # Research index page card list
+│   │   ├── services.js          # Services page card list (one description holds a JSX block)
+│   │   ├── contact.js           # Contact form subject dropdown options
+│   │   ├── nbrrCard.js          # NBRRCard highlights + subtitle/date
+│   │   ├── artEngineering.js    # ArtEngineering highlights + subtitle/paragraphs
+│   │   ├── splinter.js          # Splinter slideshow images/captions, highlights, PDF labels
+│   │   ├── torus.js             # Torus slideshow images, highlights, body paragraphs
+│   │   ├── backScratchCard.js   # BackScratchCard subtitle/date
+│   │   ├── neuralSHO.js         # NeuralSHO highlight tags
+│   │   └── waveformComparisons.js # WaveformComparisons highlight tags
 │   ├── components/            # ALL React components live here — pages and sub-components together, no separate "pages" dir
 │   │   ├── About/
 │   │   │   ├── About.js         # page: bio + timeline + skills
-│   │   │   ├── AboutCard.js     # hardcoded bio blockquote
-│   │   │   ├── Techstack.js     # hardcoded language/framework icon grid
-│   │   │   ├── Timeline.js      # hardcoded career/education timeline
-│   │   │   └── Toolstack.js     # hardcoded tools icon grid
+│   │   │   ├── AboutCard.js     # bio blockquote — content from data/bio.js
+│   │   │   ├── Techstack.js     # language/framework icon grid — content from data/techstack.js
+│   │   │   ├── Timeline.js      # career/education timeline — content from data/timeline.js
+│   │   │   └── Toolstack.js     # tools icon grid — content from data/toolstack.js
 │   │   ├── Contact/
 │   │   │   └── Contact.js       # page: EmailJS contact form
 │   │   ├── Home/
@@ -38,7 +56,7 @@ personal-website/
 │   │   │   ├── Scroll.js        # animated rotating-role text widget
 │   │   │   └── Scroll.css       # only component-scoped CSS file in the repo
 │   │   ├── Projects/
-│   │   │   ├── Projects.js       # page: STUB ("Content coming soon!") — index route, not linked from Navbar
+│   │   │   ├── Projects.js       # page: index route, card grid from data/projects.js — not linked from Navbar
 │   │   │   ├── AlgoTrade/
 │   │   │   │   └── AlgoTrade.js  # page: algorithmic trading project detail
 │   │   │   ├── BackScratch/
@@ -52,7 +70,7 @@ personal-website/
 │   │   │       ├── Splinter.js         # sub-section, embeds spec-sheet PDFs via react-pdf
 │   │   │       └── Torus.js            # sub-section (Torus Project)
 │   │   ├── Research/
-│   │   │   ├── Research.js               # page: index — hardcoded PROJECTS array rendered as cards
+│   │   │   ├── Research.js               # page: index — PROJECTS array from data/research.js rendered as cards
 │   │   │   ├── CoupkooReview/
 │   │   │   │   └── CoupkooReview.js
 │   │   │   ├── GravitationalWaves/
@@ -64,7 +82,7 @@ personal-website/
 │   │   │   └── ParapsychologyResearch/
 │   │   │       └── ParapsychologyResearch.js
 │   │   ├── Services/
-│   │   │   ├── Services.js       # page: hardcoded service list
+│   │   │   ├── Services.js       # page: service list from data/services.js
 │   │   │   └── ServiceCard.js    # reusable service card sub-component
 │   │   ├── Footer.js             # shared: site footer
 │   │   ├── Navbar.js             # shared: top nav w/ Projects & Research dropdowns
@@ -93,6 +111,12 @@ personal-website/
 - Purpose: All binary/static media used by components (images, PDFs, video). Named `Assets` (capital A), not the CRA-conventional lowercase `assets`.
 - Contains: PNG/JPG/JPEG/SVG images, MP4 demo videos, PDF documents (research papers, spec sheets).
 - Key files: subfolders mirror the feature areas that use them (`Research/`, `Robotics/`, `Services/`, `TechIcons/`, `BackScratch/`) plus loose top-level site-wide images.
+
+**`src/data/`:**
+- Purpose: Content data layer — plain JS modules (exported consts: arrays/objects/strings) holding copy that was previously defined inline in component files. Introduced by the data-layer refactor to decouple content from presentation.
+- Contains: 17 files, one per content area or sub-component (see directory tree above for the full list and what each holds). Most files are pure data; `techstack.js`, `toolstack.js`, `splinter.js`, `torus.js` also import image assets directly so the consuming component stays presentation-only; `services.js` holds one JSX description block (imports `react`).
+- Key files: `bio.js`, `timeline.js`, `projects.js`, `research.js`, `services.js`, `contact.js`, `social.js` (page-level content); `nbrrCard.js`, `artEngineering.js`, `splinter.js`, `torus.js`, `backScratchCard.js`, `neuralSHO.js`, `waveformComparisons.js` (sub-component-level content).
+- Note: a handful of body paragraphs that embed a live in-sentence link (in `NBRRCard.js`, `NeuralSHO.js`, `WaveformComparisons.js`, `BackScratchCard.js`, `ArtEngineering.js`) were deliberately left inline in the component rather than moved here — see `CONVENTIONS.md`.
 
 **`src/components/`:**
 - Purpose: Holds both route-level "pages" and their reusable sub-components/sections — there is no separate `pages/` directory. Organized by feature area (About, Contact, Home, Projects, Research, Services), each as its own subdirectory.
@@ -127,6 +151,7 @@ personal-website/
 **Files:**
 - Component files: `PascalCase.js` matching the exported component name (e.g. `Navbar.js` exports `NavBar`, `AboutCard.js` exports `AboutCard`).
 - One component per file; default export used throughout (no named exports for components observed).
+- Data files (`src/data/`): `camelCase.js`, one file per content area — named after the consuming component in camelCase where it's a 1:1 relationship (e.g. `nbrrCard.js` for `NBRRCard.js`, `backScratchCard.js` for `BackScratchCard.js`), or after the content topic for shared/page-level data (`social.js`, `projects.js`, `contact.js`). Named exports only (no default export), using the same const-naming convention as before extraction (`UPPER_SNAKE_CASE` for page-level arrays, mixed case matching the old in-component name for sub-component data).
 - CSS files: lowercase/mixed to match their scope — `App.css`, `index.css`, `style.css` (global), `Scroll.css` (component-scoped, same directory as `Scroll.js`).
 
 **Directories:**
@@ -145,7 +170,7 @@ personal-website/
 - Add a sibling file inside that page's folder, e.g. `src/components/Research/GravitationalWaves/NewSection.js`, and import/compose it into the parent page file (mirrors `NeuralSHO.js`/`WaveformComparisons.js` under `GravitationalWaves/`).
 
 **New static content data (project list, timeline entries, etc.):**
-- No dedicated `data/` directory currently exists — such data is defined inline as module-level constants at the top of the relevant component file (e.g. `PROJECTS` in `Research.js`, `HIGHLIGHTS` in `NeuralSHO.js`). If growth warrants extraction, introduce `src/data/<topic>.js` and import from there; no existing pattern to follow yet.
+- Add or extend a file in `src/data/<topic>.js` (camelCase; matching the consuming component's name where it's a 1:1 relationship, e.g. `nbrrCard.js` for `NBRRCard.js`) exporting plain consts, and import them into the component. Follow the existing 17-file pattern: page-level index arrays (`projects.js`, `research.js`, `services.js`, `contact.js`) use `UPPER_SNAKE_CASE` export names (`PROJECTS`, `SERVICES`, `SUBJECTS`); sub-component data (`nbrrCard.js`, `splinter.js`, etc.) mirrors the constants that used to live at the top of the component (`HIGHLIGHTS`, `CONTENT`, `SLIDES`). A data file may import image assets directly (see `techstack.js`, `splinter.js`) so the component stays presentation-only. Exception: short prose paragraphs that embed a live in-sentence link stay hardcoded in the component rather than being extracted — plain strings and structured arrays go to `src/data/`, link-bearing paragraphs stay put.
 
 **New images/PDFs/video:**
 - Place under `src/Assets/<FeatureArea>/` (matching the consuming component's feature folder name), then `import` the file directly into the component (CRA/webpack asset-import pattern — see `import profilepic from "../../Assets/about.png"` in `About.js`).

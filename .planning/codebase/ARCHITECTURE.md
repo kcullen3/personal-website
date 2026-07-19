@@ -35,6 +35,16 @@
 └───────────────────────────────┬───────────────────────────────┘
                                  ▼
 ┌──────────────────────────────────────────────────────────────┐
+│                      Content Data Layer                        │
+│  Plain JS modules — content arrays/objects/strings, no logic   │
+│  (imported by both the Page and Section/Card layers above)     │
+│  `src/data/*.js` — 17 files (bio, timeline, techstack,          │
+│  toolstack, social, scroll, projects, research, services,      │
+│  contact, nbrrCard, artEngineering, splinter, torus,            │
+│  backScratchCard, neuralSHO, waveformComparisons)               │
+└───────────────────────────────┬───────────────────────────────┘
+                                 ▼
+┌──────────────────────────────────────────────────────────────┐
 │         Shared/cross-cutting components + static assets        │
 │  Particle.js (bg canvas), Navbar.js, Footer.js, Pre.js,         │
 │  ScrollToTop.js — `src/components/*.js`                        │
@@ -55,16 +65,16 @@
 | `Home` | Landing page hero (name, animated role scroll, profile image) | `src/components/Home/Home.js` |
 | `Scroll` | Animated rotating text ("Physicist", "Engineer", etc.) used inside Home | `src/components/Home/Scroll.js`, `Scroll.css` |
 | `About` | About page: bio card, profile image, Timeline, Techstack, Toolstack, social links | `src/components/About/About.js` |
-| `AboutCard` | Hardcoded bio blockquote + "currently working on" list | `src/components/About/AboutCard.js` |
-| `Timeline` | Hardcoded career/education timeline entries | `src/components/About/Timeline.js` |
-| `Techstack` / `Toolstack` | Hardcoded icon grids (languages/frameworks vs tools) | `src/components/About/Techstack.js`, `Toolstack.js` |
-| `Projects` | Projects index — currently a stub ("Content coming soon!") | `src/components/Projects/Projects.js` |
+| `AboutCard` | Bio blockquote + "currently working on" list; content from `src/data/bio.js` | `src/components/About/AboutCard.js` |
+| `Timeline` | Career/education timeline entries; content from `src/data/timeline.js` | `src/components/About/Timeline.js` |
+| `Techstack` / `Toolstack` | Icon grids (languages/frameworks vs tools); content from `src/data/techstack.js`, `toolstack.js` | `src/components/About/Techstack.js`, `Toolstack.js` |
+| `Projects` | Projects index — card grid rendered from `src/data/projects.js` | `src/components/Projects/Projects.js` |
 | `BackScratch` / `AlgoTrade` / `Robotics` | Individual project detail pages, each composed of sub-cards | `src/components/Projects/**` |
-| `Research` | Research index — hardcoded `PROJECTS` array rendered as cards, linking to detail pages | `src/components/Research/Research.js` |
+| `Research` | Research index — card grid rendered from `src/data/research.js`, linking to detail pages | `src/components/Research/Research.js` |
 | `GravitationalWaves`, `CoupkooReview`, `MyPsychicEdge`, `ParapsychologyResearch` | Research detail pages | `src/components/Research/**` |
-| `NeuralSHO`, `WaveformComparisons` | Embed research PDFs inline via `react-pdf` inside GravitationalWaves page | `src/components/Research/GravitationalWaves/NeuralSHO.js`, `WaveformComparisons.js` |
-| `Splinter` | Robotics sub-page that also embeds PDFs (spec sheets) via `react-pdf` | `src/components/Projects/Robotics/Splinter.js` |
-| `Services` / `ServiceCard` | Services page — hardcoded service list rendered as cards | `src/components/Services/Services.js`, `ServiceCard.js` |
+| `NeuralSHO`, `WaveformComparisons` | Embed research PDFs inline via `react-pdf` inside GravitationalWaves page; highlight tags from `src/data/neuralSHO.js`/`waveformComparisons.js` | `src/components/Research/GravitationalWaves/NeuralSHO.js`, `WaveformComparisons.js` |
+| `Splinter` | Robotics sub-page that also embeds PDFs (spec sheets) via `react-pdf`; slides/highlights/labels from `src/data/splinter.js` | `src/components/Projects/Robotics/Splinter.js` |
+| `Services` / `ServiceCard` | Services page — card grid rendered from `src/data/services.js` | `src/components/Services/Services.js`, `ServiceCard.js` |
 | `Contact` | Contact form; submits via EmailJS (`@emailjs/browser`) using `REACT_APP_EMAILJS_*` env vars | `src/components/Contact/Contact.js` |
 
 ## Pattern Overview
@@ -73,7 +83,7 @@
 
 **Key Characteristics:**
 - Flat, page-oriented component tree: `App` → route component → (optional) sub-components. No shared layout components beyond Navbar/Footer/Particle/Preloader.
-- All content (bio text, project descriptions, tech lists, service descriptions) is **hardcoded directly in JSX/JS**, often as inline arrays of objects (e.g. `PROJECTS` in `Research.js`, `SUBJECTS` in `Contact.js`) — there is no CMS, no markdown, no separate `data/` or `content/` directory.
+- Content (bio text, project descriptions, tech lists, service descriptions) is extracted into a plain-JS **data layer** under `src/data/*.js` (e.g. `PROJECTS` in `data/research.js`, `SUBJECTS` in `data/contact.js`), imported by the page/section component that renders it — still no CMS or markdown, but content and presentation are now separated. A small, deliberate exception: a handful of body paragraphs that embed a live in-sentence link (e.g. in `NBRRCard.js`, `BackScratchCard.js`) remain hardcoded in the component rather than pushing link markup into data files.
 - No global state management (no Redux/Context/Zustand). Each component owns its own `useState`/`useEffect` local state (e.g. `About`/`Contact`/`Navbar`/`Particle`/`NeuralSHO`).
 - Styling is a hybrid: Bootstrap 5 (`bootstrap.min.css`) + `react-bootstrap` components (`Container`, `Row`, `Col`, `Card`, `Form`, `Navbar`) for grid/layout, one global custom stylesheet (`src/style.css`, ~1090 lines) for theming (CSS custom properties for colors/fonts) and custom classes, plus **large amounts of inline `style={{ ... }}` objects** directly in components. One component-local CSS file exists: `src/components/Home/Scroll.css`.
 - React 17 + `ReactDOM.render` (not React 18 `createRoot`).
@@ -91,16 +101,23 @@
 **Page layer:**
 - Purpose: One component per route; composes the page from bootstrap grid + sub-components; usually renders `<Particle />` as its background.
 - Location: `src/components/<Area>/<Page>.js` (e.g. `Home/Home.js`, `About/About.js`, `Contact/Contact.js`)
-- Contains: JSX layout, hardcoded copy, local UI state where needed (e.g. Contact form state, About/Navbar scroll state).
-- Depends on: react-bootstrap, react-icons, shared components (`Particle`), Assets.
+- Contains: JSX layout, local UI state where needed (e.g. Contact form state, About/Navbar scroll state); index-style pages (`Projects.js`, `Research.js`, `Services.js`, `Contact.js`) import their card/option lists from `src/data/`.
+- Depends on: react-bootstrap, react-icons, shared components (`Particle`), Assets, `src/data/*.js`.
 - Used by: `App.js` route table.
 
 **Section/card sub-component layer:**
 - Purpose: Break a large page into semantically named chunks (e.g. `Timeline`, `Techstack`, `NBRRCard`, `Splinter`, `WaveformComparisons`).
 - Location: `src/components/<Area>/<Sub>/<Component>.js`
-- Contains: Presentational JSX + hardcoded data arrays; some embed PDFs (`react-pdf`) or media (`<video>`/`<img>`).
-- Depends on: react-bootstrap, react-icons, `Assets/**` imports.
-- Used by: parent page component only (not reused across pages).
+- Contains: Presentational JSX; content constants (`HIGHLIGHTS`, `CONTENT`, `SLIDES`, icon lists) imported from a matching `src/data/*.js` module rather than defined locally; some still inline one or two body paragraphs that embed a live in-sentence link (kept out of the data layer by convention); some embed PDFs (`react-pdf`) or media (`<video>`/`<img>`).
+- Depends on: react-bootstrap, react-icons, `Assets/**` imports, `src/data/*.js`.
+- Used by: parent page component only (not reused across pages), except `src/data/social.js` which feeds both `Footer.js` and `About.js`.
+
+**Data layer:**
+- Purpose: Plain JS modules holding content (arrays/objects/strings, one file with a JSX description block) with no rendering logic — decouples copy from presentation so content edits don't touch component code.
+- Location: `src/data/*.js` — 17 files: `bio.js`, `timeline.js`, `techstack.js`, `toolstack.js`, `social.js`, `scroll.js`, `projects.js`, `research.js`, `services.js`, `contact.js`, `nbrrCard.js`, `artEngineering.js`, `splinter.js`, `torus.js`, `backScratchCard.js`, `neuralSHO.js`, `waveformComparisons.js`.
+- Contains: Exported consts (`UPPER_SNAKE_CASE` for page-level arrays like `PROJECTS`/`SERVICES`/`SUBJECTS`, mixed case for sub-component data mirroring the old in-component names like `HIGHLIGHTS`/`CONTENT`/`SLIDES`); some files import image assets directly (e.g. `techstack.js`, `splinter.js`, `torus.js`) so the consuming component stays presentation-only.
+- Depends on: `src/Assets/**` (for files holding image imports); `react` (only `services.js`, for its one JSX description block).
+- Used by: the corresponding Page or Section/card component (1:1 in most cases; `social.js` is shared by two components).
 
 **Shared/cross-cutting layer:**
 - Purpose: Global UI chrome and effects reused on every/most pages.
@@ -117,7 +134,7 @@
 2. `react-router-dom` matches the path against the `<Routes>` table in `src/App.js:74-89` and swaps the rendered route element.
 3. `PageTitle` (`src/App.js:47-53`) reacts to the new `location.pathname` via `useEffect` and updates `document.title` from the `PAGE_TITLES` map.
 4. `ScrollToTop` (`src/components/ScrollToTop.js`) reacts to the same `pathname` change and calls `window.scrollTo(0, 0)`.
-5. The matched page component renders, typically mounting its own `<Particle />` background and static/hardcoded content.
+5. The matched page component renders, typically mounting its own `<Particle />` background and its static content (imported from `src/data/*.js` where applicable).
 
 ### Contact Form Submission
 
@@ -138,7 +155,7 @@
 **Card/section sub-component:**
 - Purpose: Isolates one visual block within a page (bio card, timeline, tech icon grid, PDF viewer panel) to keep page files smaller.
 - Examples: `src/components/About/Timeline.js`, `src/components/Projects/Robotics/NBRRCard.js`, `src/components/Research/GravitationalWaves/NeuralSHO.js`
-- Pattern: Function component; frequently defines a local constant (array of objects) for its content directly above the component definition (e.g. `HIGHLIGHTS`, `PROJECTS`, `SUBJECTS`).
+- Pattern: Function component; imports its content constants (e.g. `HIGHLIGHTS`, `CONTENT`, `SLIDES`, `PROJECTS`, `SUBJECTS`) from a matching `src/data/<name>.js` module instead of defining them locally. Five sub-components (`NBRRCard`, `NeuralSHO`, `WaveformComparisons`, `BackScratchCard`, `ArtEngineering`) still keep one or two body paragraphs inline because those paragraphs embed a live `<a>` link mid-sentence — link-bearing prose was deliberately left out of the data-layer extraction (see CONVENTIONS.md).
 
 **Inline-styled bootstrap grid:**
 - Purpose: Layout via `react-bootstrap` `<Container>/<Row>/<Col>` combined with one-off `style={{ ... }}` objects for spacing/color rather than CSS classes.
@@ -160,7 +177,7 @@
 ## Architectural Constraints
 
 - **Threading:** Single-threaded browser SPA; no web workers except the implicit PDF.js worker used by `react-pdf` (loaded from a CDN — see `pdfjs.GlobalWorkerOptions.workerSrc` in `NeuralSHO.js:8`, `WaveformComparisons.js`, `Splinter.js`).
-- **Global state:** None beyond module-scope constants (e.g. `PAGE_TITLES` in `App.js`, `allConstellations` star-map data in `Particle.js`, `PROJECTS`/`SUBJECTS` arrays in page files). No singletons holding mutable app state.
+- **Global state:** None beyond module-scope constants (e.g. `PAGE_TITLES` in `App.js`, `allConstellations` star-map data in `Particle.js`, `PROJECTS`/`SUBJECTS`-style arrays now living in `src/data/*.js` and imported into page/section files). No singletons holding mutable app state.
 - **Circular imports:** None observed — import graph is strictly top-down (App → pages → sub-components → assets).
 - **Environment coupling:** `Contact.js` requires three `REACT_APP_EMAILJS_*` env vars to be set at build time (CRA inlines `process.env.REACT_APP_*` at build); missing values will silently produce `undefined` args to `emailjs.send`.
 - **PDF worker is CDN-loaded:** All three `react-pdf` usages point `pdfjs.workerSrc` at `cdnjs.cloudflare.com`, creating a runtime dependency on an external CDN being reachable and version-matched to the installed `pdfjs-dist` transitively bundled with `react-pdf@5.7.2`.
@@ -168,23 +185,17 @@
 
 ## Anti-Patterns
 
-### Content hardcoded inline in components (no data/content layer)
-
-**What happens:** Bio text, timeline entries, tech stack lists, project/research descriptions, service descriptions, and contact form subject options are written directly as JSX strings or inline JS arrays inside component files (e.g. `AboutCard.js`, `Timeline.js`, `Research.js`'s `PROJECTS`, `Contact.js`'s `SUBJECTS`).
-**Why it's wrong:** Any content update requires editing and redeploying JS component code; no separation between content and presentation makes future CMS/localization/data-driven changes harder and increases diff noise on simple text edits.
-**Do this instead:** Extract recurring content shapes (timeline entries, project cards, tech icons, services) into plain data files (e.g. `src/data/projects.js`, `src/data/timeline.js`) imported by the components, keeping components focused on rendering.
-
 ### Heavy inline `style={{ }}` usage alongside a large global stylesheet
 
 **What happens:** Nearly every page/component mixes `className` (pointing at rules in the single 1090-line `src/style.css`) with large ad-hoc `style={{ ... }}` objects duplicating colors/spacing (e.g. repeated `border: "1px solid var(--primary)"` boxes in `About.js`, `Contact.js`, `NeuralSHO.js`, `Robotics.js`).
 **Why it's wrong:** Duplicated inline styles are harder to theme consistently, bypass CSS specificity/caching benefits, and bloat component files with presentation logic.
 **Do this instead:** Promote repeated inline style blocks (e.g. the "bordered glow card" pattern) into a shared CSS class in `style.css` (or a small set of reusable styled wrapper components).
 
-### Stub/placeholder route (`Projects` index)
+### `Projects` index route not linked from primary nav
 
-**What happens:** `src/components/Projects/Projects.js` is a near-empty stub rendering "Content coming soon!" even though the Navbar's Projects dropdown links directly to `/projects/backscratch`, `/projects/robotics`, `/projects/algotrade` and never to `/projects` itself.
-**Why it's wrong:** `/projects` is unreachable from primary nav but still routed; a manager agent should be aware this page is unfinished, not broken.
-**Do this instead:** Either build out `Projects.js` as an index/grid (mirroring `Research.js`'s `PROJECTS` card pattern) or remove the standalone route if it's dead.
+**What happens:** `src/components/Projects/Projects.js` is now a real card grid (built out after this doc's initial pass, mirroring `Research.js`'s `PROJECTS` pattern, content in `src/data/projects.js`), but the Navbar's Projects dropdown still links directly to `/projects/backscratch`, `/projects/robotics`, `/projects/algotrade` and never to `/projects` itself.
+**Why it's wrong:** `/projects` is a fully-built page but unreachable from primary nav — a visitor (or manager agent) would only find it by typing the URL directly.
+**Do this instead:** Add a `Nav.Item`/`NavDropdown.Item` link to `/projects` in `src/components/Navbar.js`, or intentionally document it as a non-nav landing page if that's by design.
 
 ## Error Handling
 

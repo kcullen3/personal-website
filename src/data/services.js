@@ -1,0 +1,66 @@
+/* Service offering cards for the Services page */
+import React from "react";
+import healing from "../Assets/Services/healing.jpg";
+import consulting from "../Assets/Services/consulting.jpg";
+import website from "../Assets/Services/website.jpg";
+import art from "../Assets/Services/art.jpg";
+import tech from "../Assets/Services/tech.jpg";
+
+export const SERVICES = [
+    {
+        title: "Business Consulting",
+        description: `A founder with physics training, startup experience & genuine psychic ability.
+        Most consultants offer one. I bring all four to the problems your current strategy can't crack.`,
+        img: consulting,
+        url: "/contact",
+        isExternal: false,
+    },
+    {
+        title: "Web Design & Brand Dev",
+        description: (
+            <>
+                <div style={{ marginBottom: "8px" }}>Your online brand should feel like you — not a template with your logo on it.
+                    I build web presence that's functional, distinctive, and actually yours. Some recent sites I've built:</div>
+                <ul style={{ margin: 0, paddingLeft: "18px" }}>
+                    <li><a href="https://kcullen3.github.io/personal-website" rel="noopener noreferrer"
+                        style={{ color: "var(--accent1_dull)", textDecoration: "underline" }}>
+                        This One</a></li>
+                    <li><a href="https://backscratch.vercel.app/" target="_blank" rel="noopener noreferrer"
+                        style={{ color: "var(--accent1_dull)", textDecoration: "underline" }}>
+                        BackScratch</a></li>
+                    {/*<li><a href="https://example.com/" target="_blank" rel="noopener noreferrer"
+                    style={{ color: "var(--accent1_dull)", textDecoration: "underline" }}>
+                    Example Project</a></li>*/}
+                </ul>
+            </>
+        ),
+        img: website,
+        url: "/projects/portfolio",
+        isExternal: false,
+    },
+    {
+        title: "Technical Consulting",
+        description: `The gap between 'we need this technology' and 'this technology actually
+        works for us' is where most teams get stuck. I close that gap — from AI implementation
+        to full systems engineering — without the chaos of figuring it out alone.`,
+        img: tech,
+        url: "/contact",
+        isExternal: false,
+    },
+    {
+        title: "Earth Healing",
+        description: `Energy and trauma stay stuck in the body long after the mind has moved on —
+        as a certified Reiki practitioner and intuitive reader with a physics background,
+        I work at the level where most healing methods can't reach.`,
+        img: healing,
+        url: "https://earthhealing.life/",
+        isExternal: true,
+    },
+    {
+        title: "Project Collaboration",
+        description: "For artists, creators and builders who need someone who speaks both languages — turning vision into reality and reality into a sustainable practice.",
+        img: art,
+        url: "/contact",
+        isExternal: false,
+    },
+];

@@ -1,14 +1,6 @@
 import React from "react";
 import "./Scroll.css";
-
-const words = [
-  "Computational Physicist",
-  "Psychic & Energy Healer",
-  "Robotics Engineer",
-  "Entrepreneur",
-  "Parapsychological Researcher",
-  //"Content Creator",
-];
+import { words } from "../../data/scroll";
 
 function Scroll() {
   return (
