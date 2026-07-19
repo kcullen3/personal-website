@@ -3,7 +3,7 @@ import React from "react";
 import { Row, Col } from "react-bootstrap";
 import landing from "../../../Assets/MPE/mpe.PNG";
 import { BsBoxArrowUpRight } from "react-icons/bs";
-import { CONTENT } from "../../../data/myPsychicEdgeCard";
+import { HIGHLIGHTS, CONTENT } from "../../../data/myPsychicEdgeCard";
 
 const bodyStyle = {
     color: "var(--text)",
@@ -18,7 +18,7 @@ const bodyStyle = {
 
 function MyPsychicEdgeCard() {
     return (
-        <div className="project-card-view" style={{
+        <div style={{
             border: "1px solid var(--primary)",
             borderRadius: "16px",
             boxShadow: "0 0 20px rgba(155, 114, 207, 0.2)",
@@ -80,6 +80,15 @@ function MyPsychicEdgeCard() {
                 </p>
                 <footer className="blockquote-footer">Erwin Schrödinger, physicist, Nobel laureate</footer>
             </blockquote>
+
+            {/* Row 3: highlights */}
+            <div className="robotics-highlights" style={{ marginTop: "16px" }}>
+                {HIGHLIGHTS.map((item, i) => (
+                    <div key={i} className="robotics-highlight-item">
+                        <span className="cyan">✦</span> {item}
+                    </div>
+                ))}
+            </div>
 
         </div>
     );

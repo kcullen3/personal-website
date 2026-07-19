@@ -2,7 +2,7 @@ import React from "react";
 import { Row, Col } from "react-bootstrap";
 import landing from "../../../Assets/BackScratch/landing.png";
 import { BsBoxArrowUpRight } from "react-icons/bs";
-import { CONTENT } from "../../../data/backScratchCard";
+import { HIGHLIGHTS, CONTENT } from "../../../data/backScratchCard";
 
 const bodyStyle = {
     color: "var(--text)",
@@ -25,7 +25,7 @@ const collageStyle = {
 
 function BackScratchCard() {
     return (
-        <div className="project-card-view" style={{
+        <div style={{
             border: "1px solid var(--primary)",
             borderRadius: "16px",
             boxShadow: "0 0 20px rgba(155, 114, 207, 0.2)",
@@ -75,6 +75,15 @@ function BackScratchCard() {
                     />
                 </Col>
             </Row>
+
+            {/* Row 2: highlights */}
+            <div className="robotics-highlights" style={{ marginBottom: "0" }}>
+                {HIGHLIGHTS.map((item, i) => (
+                    <div key={i} className="robotics-highlight-item">
+                        <span className="cyan">✦</span> {item}
+                    </div>
+                ))}
+            </div>
 
         </div>
     );
