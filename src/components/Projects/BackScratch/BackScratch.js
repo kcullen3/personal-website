@@ -6,7 +6,7 @@ import BackScratchCard from "./BackScratchCard";
 function BackScratch() {
     return (
         <>
-            <Particle />
+            <Particle static />
             <Container fluid className="about-section">
 
                 <Container>

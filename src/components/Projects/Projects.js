@@ -9,7 +9,7 @@ import { PROJECTS } from "../../data/projects";
 function Projects() {
     return (
         <>
-            <Particle />
+            <Particle static />
             <Container fluid className="about-section">
                 <Container>
                     <h1 className="project-heading" style={{ paddingTop: "40px" }}>

@@ -9,7 +9,7 @@ import CommunityCollaboration from "./ArtEngineering";
 function Robotics() {
     return (
         <>
-            <Particle />
+            <Particle static />
             <Container fluid className="about-section">
 
                 <Container>

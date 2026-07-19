@@ -6,7 +6,7 @@ import AnomalousPerturbations from "./AnomalousPerturbations";
 function ParapsychologyResearch() {
     return (
         <>
-            <Particle />
+            <Particle static />
             <Container fluid className="about-section">
                 <Container>
                     <h1 className="project-heading" style={{ paddingTop: "40px" }}>

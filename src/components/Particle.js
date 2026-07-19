@@ -4,10 +4,10 @@ import React, { lazy, Suspense } from "react";
 // fixed-position background layer, so it's safe to load after first paint.
 const ParticleField = lazy(() => import("./ParticleField"));
 
-function Particle() {
+function Particle({ static: isStatic = false }) {
   return (
     <Suspense fallback={null}>
-      <ParticleField />
+      <ParticleField static={isStatic} />
     </Suspense>
   );
 }

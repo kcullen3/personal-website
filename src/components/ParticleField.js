@@ -293,7 +293,7 @@ const allConstellations = [
   },
 ];
 
-function ParticleField() {
+function ParticleField({ static: isStatic = false }) {
   const canvasRef = useRef(null);
   const driftRef = useRef([]);
   const shootingStarsRef = useRef([]);
@@ -327,8 +327,8 @@ function ParticleField() {
     fadeRef.current = allConstellations.map(() => 0);
     visibleRef.current.forEach(i => { fadeRef.current[i] = 1; });
 
-    // Rotate constellations every 20 seconds
-    const rotateInterval = setInterval(() => {
+    // Rotate constellations every 20 seconds (skip when static)
+    const rotateInterval = isStatic ? null : setInterval(() => {
       const next = pickVisible();
       // Fade out old
       visibleRef.current.forEach(i => {
@@ -337,7 +337,7 @@ function ParticleField() {
       visibleRef.current = next;
     }, 20000);
 
-    // Shooting stars
+    // Shooting stars (skip when static)
     const spawnShootingStar = () => {
       shootingStarsRef.current.push({
         x: Math.random() * SKY_W,
@@ -349,7 +349,7 @@ function ParticleField() {
         fade: 0.012 + Math.random() * 0.01,
       });
     };
-    const shootingStarInterval = setInterval(() => {
+    const shootingStarInterval = isStatic ? null : setInterval(() => {
       if (Math.random() < 0.7) spawnShootingStar();
     }, 2500);
 
@@ -369,10 +369,12 @@ function ParticleField() {
         if (opacity <= 0) return;
 
         const drift = driftRef.current[i];
-        drift.offsetX += drift.dx;
-        drift.offsetY += drift.dy;
-        if (Math.abs(drift.offsetX) > 30) drift.dx *= -1;
-        if (Math.abs(drift.offsetY) > 30) drift.dy *= -1;
+        if (!isStatic) {
+          drift.offsetX += drift.dx;
+          drift.offsetY += drift.dy;
+          if (Math.abs(drift.offsetX) > 30) drift.dx *= -1;
+          if (Math.abs(drift.offsetY) > 30) drift.dy *= -1;
+        }
 
         const ox = constellation.origin.x + drift.offsetX;
         const oy = constellation.origin.y + drift.offsetY;
@@ -434,7 +436,9 @@ function ParticleField() {
         s.opacity -= s.fade;
       });
 
-      animFrame = requestAnimationFrame(draw);
+      if (!isStatic) {
+        animFrame = requestAnimationFrame(draw);
+      }
     };
 
     draw();
@@ -444,7 +448,7 @@ function ParticleField() {
       clearInterval(rotateInterval);
       clearInterval(shootingStarInterval);
     };
-  }, []);
+  }, [isStatic]);
 
   return (
     <>
@@ -471,16 +475,16 @@ function ParticleField() {
             opacity: {
               value: 0.7,
               random: true,
-              anim: { enable: true, speed: 0.5, opacity_min: 0.1, sync: false },
+              anim: { enable: !isStatic, speed: 0.5, opacity_min: 0.1, sync: false },
             },
             size: {
               value: 2.5,
               random: true,
-              anim: { enable: true, speed: 0.8, size_min: 0.3, sync: false },
+              anim: { enable: !isStatic, speed: 0.8, size_min: 0.3, sync: false },
             },
             line_linked: { enable: false },
             move: {
-              enable: true,
+              enable: !isStatic,
               speed: 0.3,
               direction: "none",
               random: true,

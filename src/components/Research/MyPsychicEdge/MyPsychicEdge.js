@@ -7,7 +7,7 @@ import MyPsychicEdgeCard from "./MyPsychicEdgeCard";
 function MyPsychicEdge() {
     return (
         <>
-            <Particle />
+            <Particle static />
             <Container fluid className="about-section">
 
                 <Container>
