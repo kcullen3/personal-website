@@ -2,7 +2,7 @@
 
 **Analysis Date:** 2026-07-18
 
-Summary for a manager AI overseeing future work: this is a small, well-organized CRA portfolio site. No secrets are leaked, no TODO/FIXME backlog exists, and the code is generally clean. The real risks are dependency staleness (CRA/react-scripts is deprecated upstream) and unbounded bundle growth from two heavy libraries (`react-tsparticles`, `react-pdf`/`pdfjs-dist`) that are not code-split.
+Summary for a manager AI overseeing future work: this is a small, well-organized CRA portfolio site. No secrets are leaked, no TODO/FIXME backlog exists, and the code is generally clean. The main remaining risk is dependency staleness (CRA/react-scripts is deprecated upstream). Bundle growth from two heavy libraries (`react-tsparticles`, `react-pdf`/`pdfjs-dist`) was resolved via route-level code splitting — see Resolved section.
 
 ## High Risk
 
@@ -11,11 +11,6 @@ Summary for a manager AI overseeing future work: this is a small, well-organized
 - Files: `package.json:18`
 - Impact: Slow build times, aging webpack 5 config baked into `react-scripts`, and no path to fix future toolchain vulnerabilities without ejecting or migrating.
 - Fix approach: Migrate to Vite (or Next.js if SSR/SEO becomes a goal) when a larger refactor phase is planned. Not urgent for a static portfolio site, but should not be delayed indefinitely.
-
-**No code-splitting — heavy libraries ship in the main bundle:**
-- Issue: `src/App.js` statically imports every route component (`Robotics`, `GravitationalWaves`, `BackScratch`, etc.) with no `React.lazy`/`Suspense` anywhere in `src/`. `react-pdf` (which pulls in `pdfjs-dist`, ~36MB unpacked with its own worker/wasm assets) is imported directly in `src/components/Research/GravitationalWaves/WaveformComparisons.js`, `src/components/Research/GravitationalWaves/NeuralSHO.js`, and `src/components/Projects/Robotics/Splinter.js`. `react-tsparticles` (~9.4MB unpacked with `tsparticles` core) is imported in `src/components/Particle.js`, which is itself imported by 8 different page components (`Home.js`, `About.js`, `Services.js`, `Research.js`, `GravitationalWaves.js`, `Robotics.js`, `BackScratch.js`, `Contact.js`).
-- Impact: Every visitor downloads the PDF-rendering engine and the particle-animation engine on first load, even if they only view the homepage. For a portfolio site this inflates time-to-interactive unnecessarily.
-- Fix approach: Route-level `React.lazy(() => import(...))` + `Suspense` for `Robotics`, `GravitationalWaves`, and any page using `react-pdf`; this alone would remove `pdfjs-dist` from the initial bundle. Particle background could be deferred until after first paint or made a lighter/lazy-loaded component.
 
 ## Medium Risk
 
@@ -60,6 +55,16 @@ Summary for a manager AI overseeing future work: this is a small, well-organized
 - **Alt text on images:** all 37 `<img>` tags found in `src/` carry an `alt` attribute; no obvious accessibility gap on this axis.
 - **Dead/unused components:** spot-checked `Timeline.js`, `AboutCard.js`, `BackScratchCard.js`, `ServiceCard.js`, `NBRRCard.js`, `Slideshow.js`, `Scroll.js` — all are imported and used by their respective parent pages. No orphaned component files detected.
 - **package-lock.json present:** dependency versions are locked (`package-lock.json`), so builds are reproducible.
+
+## Resolved
+
+**No code-splitting — heavy libraries ship in the main bundle: RESOLVED (2026-07-18, commit `c64ae0c`)**
+- Original issue: `src/App.js` statically imported every route component (`Robotics`, `GravitationalWaves`, `BackScratch`, etc.) with no `React.lazy`/`Suspense` anywhere in `src/`. `react-pdf` (which pulls in `pdfjs-dist`, ~36MB unpacked with its own worker/wasm assets) was imported directly in `src/components/Research/GravitationalWaves/WaveformComparisons.js`, `src/components/Research/GravitationalWaves/NeuralSHO.js`, and `src/components/Projects/Robotics/Splinter.js`. `react-tsparticles` (~9.4MB unpacked with `tsparticles` core) was imported in `src/components/Particle.js`, itself imported by 8 different page components.
+- Original impact: Every visitor downloaded the PDF-rendering engine and the particle-animation engine on first load, even if they only viewed the homepage — inflating time-to-interactive unnecessarily for a portfolio site.
+- Resolution: Route-level `React.lazy(() => import(...))` + `Suspense` added for `Robotics` and `GravitationalWaves` in `src/App.js` (the two routes that pull in `react-pdf`), and the particle background split out into a deferred `ParticleField` component (`src/components/Particle.js` now delegates to the new `src/components/ParticleField.js`).
+- Verified: `npm run build` — initial gzip bundle dropped from 284.4 kB to 98.9 kB, with `pdfjs-dist` and `react-tsparticles` now split into separate on-demand chunks instead of shipping in `main.js`.
+- Files: `src/App.js`, `src/components/Particle.js`, `src/components/ParticleField.js`
+- Commit: `c64ae0c`
 
 ---
 
