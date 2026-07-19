@@ -23,7 +23,7 @@ const collageStyle = {
     width: "100%",
     height: "200px",
     objectFit: "cover",
-    borderRadius: "8px",
+    borderRadius: "8px", 
     display: "block",
 };
 
