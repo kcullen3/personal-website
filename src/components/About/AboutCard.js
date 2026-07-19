@@ -77,7 +77,7 @@ function AboutCard() {
               ))}
             </ul>
 
-            <p style={{ color: "var(--accent1)", marginTop: "16px" }}>
+            <p style={{ color: "var(--accent2)", fontFamily: "Lato, sans-serif", marginTop: "16px" }}>
               <em>{bioQuote}</em>
             </p>
             <footer className="blockquote-footer">{bioQuoteAuthor}</footer>
