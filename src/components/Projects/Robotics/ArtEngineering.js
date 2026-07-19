@@ -47,6 +47,7 @@ function CommunityCollaboration() {
                         translated between ambitious ideas and things that actually worked. I worked
                         directly alongside artists like{" "}
                         <a href="https://www.fallonnavarro.com/new-bedford-research--robotics.html" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent1_dull)", textDecoration: "underline" }}>Fallon Navarro</a>
+                        {" "}, <a href="https://www.instagram.com/reels/DR2RarUkYey/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent1_dull)", textDecoration: "underline" }}>Tasha Lewis</a>
                         {" "}and{" "}
                         <a href="https://www.procode-dress.com/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent1_dull)", textDecoration: "underline" }}>Lilach Porges</a>
                         {" "}integrating robotics into their residencies,
