@@ -68,9 +68,10 @@ Plan: 1 of 2
 | 260718-nlt | Add My Psychic Edge and Parapsychology Research tabs to Research navbar | 2026-07-18 | 05104ea | [260718-nlt-add-my-psychic-edge-and-parapsychology-r](./quick/260718-nlt-add-my-psychic-edge-and-parapsychology-r/) |
 | 260718-nzu | Build out Projects index page (BackScratch, Robotics, AlgoTrade cards) | 2026-07-18 | 314969e | [260718-nzu-build-out-src-components-projects-projec](./quick/260718-nzu-build-out-src-components-projects-projec/) |
 | 260719-mcg | About bio quote gold + shared hover highlight on MPE/BackScratch cards | 2026-07-19 | ef33355, 1c18762 | [260719-mcg-misc-ui-fixes-1-about-page-quote-gold-co](./quick/260719-mcg-misc-ui-fixes-1-about-page-quote-gold-co/) |
+| 260719-moa | Static particle background (no drift/shooting stars/dust motion) on all Projects/Research pages | 2026-07-19 | (pending commit) | [260719-moa-static-particle-effects-projects-research](./quick/260719-moa-static-particle-effects-projects-research/) |
 
 ## Session Continuity
 
 **Last updated:** 2026-07-19
-**Last action:** Completed quick task 260719-mcg: About bio quote gold + shared hover highlight on MPE/BackScratch cards
+**Last action:** Completed quick task 260719-moa: static particle background on Projects/Research pages
 **Next action:** `/gsd-plan-phase 2`
