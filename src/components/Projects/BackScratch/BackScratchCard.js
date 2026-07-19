@@ -25,7 +25,7 @@ const collageStyle = {
 
 function BackScratchCard() {
     return (
-        <div style={{
+        <div className="project-card-view" style={{
             border: "1px solid var(--primary)",
             borderRadius: "16px",
             boxShadow: "0 0 20px rgba(155, 114, 207, 0.2)",
