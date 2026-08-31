@@ -5,5 +5,5 @@ export const words = [
   "Robotics Engineer",
   "Entrepreneur",
   "Parapsychological Researcher",
-  //"Content Creator",
+  "Content Creator",
 ];
