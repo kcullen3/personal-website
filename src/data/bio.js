@@ -15,8 +15,13 @@ export const currentlyWorkingOn = [
     suffix: " — a barter platform for small businesses",
   },
   { text: "📈 Developing algorithmic trading strategies" },
-  { text: "🔎 Looking for work in engineering, research and finance" },
   { text: "💚 Reiki & energy healing practice" },
+  {
+    emoji: "📱",
+    prefix: "Content creation on ",
+    link: { text: "Instagram", href: "https://www.instagram.com/keigancullen" },
+    suffix: " — for the scientist & spiritual seeker alike",
+  }
 ];
 
 export const beyondTheWork = [

@@ -53,19 +53,7 @@ function AboutCard() {
                 </li>
               ))}
 
-              {/*
-              <li className="about-activity">
-                {"📱 Content creation on "}
-                <a
-                  href="https://www.instagram.com/keigancullen"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: "var(--accent1_dull)" }}>
-                  Instagram <BsBoxArrowUpRight size={9} />
-                </a>
-                {" — for the scientist & spiritual seeker alike"}
-              </li>
-              */}
+              
 
               <li className="about-activity" style={{ marginTop: "16px", marginBottom: "8px" }}>
                 <strong className="cyan">Beyond The Work</strong>
